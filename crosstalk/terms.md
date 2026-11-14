@@ -105,7 +105,7 @@ You must not:
 
 ## 11. Price
 
-Crosstalk is currently free of charge. [If we introduce paid features, we will show the price and the terms before you buy.] Your Apple Music subscription is a separate purchase from Apple, and nothing you pay us is a payment for access to Apple Music.
+[Crosstalk is currently free of charge. If we introduce paid features, we will show the price and the terms before you buy.] Your Apple Music subscription is a separate purchase from Apple, and nothing you pay us is a payment for access to Apple Music.
 
 ## 12. Changes, interruptions and ending
 
@@ -129,7 +129,7 @@ Each version of these terms has a version number and an effective date at the to
 
 These terms are governed by Swedish law. If you are a consumer living in another country of the EU or EEA, you also keep the protection of the mandatory consumer rules of that country.
 
-If you have a complaint, contact us first at [contact email]. If we cannot settle it, a consumer can turn to the Swedish National Board for Consumer Disputes (Allmänna reklamationsnämnden, ARN), <https://www.arn.se>. Disputes can be brought before the Swedish courts. A consumer may also bring a claim in the courts of the country where they live.
+If you have a complaint, contact us first at [contact email]. [If we cannot settle it, a consumer can turn to the Swedish National Board for Consumer Disputes (Allmänna reklamationsnämnden, ARN), <https://www.arn.se>.] Disputes can be brought before the Swedish courts. A consumer may also bring a claim in the courts of the country where they live.
 
 ## 16. Contact
 

@@ -54,7 +54,7 @@ We do not receive your Apple Music library, your listening history beyond the tr
 | Audio of a segment | The generated audio, held so that the app can fetch it again if the connection drops. | 15 minutes |
 | Request records | Which requests were made, when, and whether they succeeded. They contain the listener identifier and no track details. | [Retention period to be decided] |
 | Fault-finding capture | The complete text sent to the AI provider and its reply. [To be confirmed: switched off in normal operation and switched on only for a limited time to investigate a fault.] | 30 days |
-| Server and network logs | Technical records of requests: time, address requested, result, your IP address, the app and system version your device reports, and the app integrity key reference. They do not contain track details or your note. | [Retention period to be decided] |
+| Server and network logs | Technical records of requests: time, address requested, result, your IP address, the app and system version your device reports, and the app integrity key reference. [To be confirmed for the production server: the exact fields, and that logs contain no track details and no note text.] | [Retention period to be decided] |
 
 [When the "Build your own show" feature is available: the description of the station and hosts that you write, the result of our automatic check of it, and the accepted world, which is stored on your device.]
 
@@ -102,7 +102,7 @@ Our contracts are with these providers' European companies, but they and their a
 
 The periods are listed in section 3.3. When a period ends we delete the data or make it anonymous. If you ask us to delete your data, we delete your host history, your request records and your identifiers.
 
-Anthropic and Google keep the content we send them for a limited time under their own terms, to detect misuse, and then delete it.
+Anthropic and Google keep the content we send them for a limited time under their own terms, to detect misuse, and then delete it. [Periods to be confirmed against the signed contracts.]
 
 ## 8. Your rights
 
