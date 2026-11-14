@@ -1,6 +1,6 @@
 ---
 title: Crosstalk — Terms of use
-version: 0.1.0-draft
+version: 0.2.0-draft
 effective_date: TBD
 status: draft, not in force
 ---
@@ -10,7 +10,7 @@ status: draft, not in force
 
 ## 1. Who we are and what these terms cover
 
-Crosstalk is provided by Fedor AB, a Swedish limited company (org. nr 559537-2961, Järfälla, Sweden). "We" and "us" mean Fedor AB. You can reach us at [contact email].
+Crosstalk is provided by Fedor AB, a Swedish limited company (org. nr 559537-2961, Fabriksvägen 8, 176 69 Järfälla, Sweden). "We" and "us" mean Fedor AB. You can reach us at <info@fedor.nu>.
 
 These terms cover your use of the Crosstalk app and the service behind it. By using Crosstalk you agree to them. If you do not agree, do not use Crosstalk.
 
@@ -24,13 +24,15 @@ These terms are between you and Fedor AB only. Apple is not a party to them. Fed
 
 ## 3. Who can use Crosstalk
 
-You must be at least [18] years old to use Crosstalk.
+You must be at least 18 years old to use Crosstalk. The app is rated 18+ in the App Store.
+
+You need a Crosstalk purchase in the App Store; section 11 explains it.
 
 You need your own active Apple Music subscription. Crosstalk plays music through that subscription, and Apple's terms for Apple Music continue to apply to the music.
 
 ## 4. What Crosstalk does
 
-Crosstalk plays your own Apple Music and adds short spoken segments by AI hosts between tracks. To write a segment, our service receives information about what you are listening to. Our [privacy policy](privacy) explains what is sent and to whom.
+Crosstalk plays your own Apple Music and adds short spoken segments by AI hosts between tracks. [If voice-over is released: a host may also speak over the start or the end of a track while its volume is lowered.] To write a segment, our service receives information about what you are listening to. Our [privacy policy](privacy) explains what is sent and to whom.
 
 Crosstalk is not a radio station and does not broadcast. We do not supply, store, change or license the music. You choose and control playback with the normal play, pause and skip controls.
 
@@ -81,7 +83,7 @@ A world works in Crosstalk only after our service has checked it and marked it a
 
 Acceptance means only that the world passed that check. It does not mean that we reviewed it, agree with it or vouch for it. A world is its author's creation and its author's responsibility.
 
-We may refuse a world, limit it, or withdraw an earlier acceptance at any time if we believe it breaks these terms or the law, or puts Crosstalk, other people or us at risk. Where we reasonably can, we will tell you why. You can ask us to look again by writing to [contact email].
+We may refuse a world, limit it, or withdraw an earlier acceptance at any time if we believe it breaks these terms or the law, or puts Crosstalk, other people or us at risk. Where we reasonably can, we will tell you why. You can ask us to look again by writing to <info@fedor.nu>.
 
 ## 9. What you may do with what Crosstalk generates
 
@@ -103,15 +105,21 @@ You must not:
 - try to get around limits, checks or security measures;
 - use Crosstalk to harm others or to break the law.
 
-## 11. Price
+## 11. Purchase and price
 
-[Crosstalk is currently free of charge. If we introduce paid features, we will show the price and the terms before you buy.] Your Apple Music subscription is a separate purchase from Apple, and nothing you pay us is a payment for access to Apple Music.
+Access to the Crosstalk service requires a purchase in the App Store. [Product, price and period to be added.] The price is shown in the App Store before you buy.
+
+Apple takes the payment. Renewal, cancellation and refunds are handled by Apple under Apple's terms, and you manage the purchase in your App Store account settings. [Right of withdrawal wording to be confirmed.]
+
+What you pay for is the Crosstalk service: the AI hosts and their shows. It is not a payment for music or for access to Apple Music. Your Apple Music subscription is a separate purchase from Apple.
+
+When your purchase ends or is refunded, the hosts stop working until you buy again.
 
 ## 12. Changes, interruptions and ending
 
 Crosstalk depends on Apple Music and on AI providers, and it is still developing. We may change, suspend or stop all or part of it. We do not promise that it will be available without interruption or that a particular host, show or feature will remain.
 
-We may suspend or end your access if you break these terms. You can stop using Crosstalk at any time by deleting the app. The privacy policy explains how to have your data deleted.
+We may suspend or end your access if you break these terms. You can stop using Crosstalk at any time by deleting the app; to stop paying, cancel the purchase in your App Store account settings. The privacy policy explains how to have your data deleted.
 
 ## 13. Our responsibility to you
 
@@ -129,8 +137,8 @@ Each version of these terms has a version number and an effective date at the to
 
 These terms are governed by Swedish law. If you are a consumer living in another country of the EU or EEA, you also keep the protection of the mandatory consumer rules of that country.
 
-If you have a complaint, contact us first at [contact email]. [If we cannot settle it, a consumer can turn to the Swedish National Board for Consumer Disputes (Allmänna reklamationsnämnden, ARN), <https://www.arn.se>.] Disputes can be brought before the Swedish courts. A consumer may also bring a claim in the courts of the country where they live.
+If you have a complaint, contact us first at <info@fedor.nu>. [If we cannot settle it, a consumer can turn to the Swedish National Board for Consumer Disputes (Allmänna reklamationsnämnden, ARN), <https://www.arn.se>.] Disputes can be brought before the Swedish courts. A consumer may also bring a claim in the courts of the country where they live.
 
 ## 16. Contact
 
-Fedor AB, org. nr 559537-2961, [postal address], Sweden. Email: [contact email].
+Fedor AB, org. nr 559537-2961, Fabriksvägen 8, 176 69 Järfälla, Sweden. Email: <info@fedor.nu>. For anything about your personal data: <privacy@fedor.nu>.

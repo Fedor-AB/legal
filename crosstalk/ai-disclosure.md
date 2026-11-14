@@ -1,6 +1,6 @@
 ---
 title: Crosstalk — AI disclosure
-version: 0.1.0-draft
+version: 0.2.0-draft
 effective_date: TBD
 status: draft, not in force
 ---
@@ -52,12 +52,18 @@ The designer decides where each text goes. Whatever the layout, these five thing
 
 ## Screen-off listening
 
-Much listening happens with the screen off, in a car or over a speaker, and other people in the room hear the hosts without ever seeing the app. Two measures cover that case:
+Much listening happens with the screen off, in a car or over a speaker, and other people in the room hear the hosts without ever seeing the app. The lock-screen title above covers that case.
 
-- the lock-screen title above, and
-- an optional short spoken line at the start of a listening session, in the session's language, for example: "You're listening to Crosstalk. The hosts are AI."
+A spoken notice at the start of a listening session is not part of the first release.
 
-The spoken line is a recommendation, not a confirmed legal requirement.
+## Marking inside the audio
+
+Every host segment is also marked as AI-generated in two ways that software can read:
+
+- **A watermark in the sound itself.** The hosts' voices are produced by Google's Gemini speech models, and Google embeds its SynthID watermark in the audio they generate.
+- **A label in the audio file.** Crosstalk writes an "AI-generated" statement into the metadata of each audio file it delivers.
+
+[To be confirmed before publication: the metadata label is implemented, and the watermark is still detectable after Crosstalk converts the audio to MP3.]
 
 ## Languages
 
