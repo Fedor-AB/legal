@@ -1,6 +1,6 @@
 ---
 title: Crosstalk — Terms of use
-version: 0.3.0-draft
+version: 0.3.1-draft
 effective_date: TBD
 status: draft, not in force
 ---
@@ -117,7 +117,7 @@ When your purchase ends or is refunded, the hosts stop working until you buy aga
 
 ## 12. Changes, interruptions and ending
 
-Crosstalk is offered in the App Store countries we choose, and we may add or remove countries. [Countries where Crosstalk is not offered: to be decided.] You may not use Crosstalk where doing so is against the law.
+Crosstalk is offered in the App Store countries we choose, and we may add or remove countries. At launch, Crosstalk is not offered in mainland China or in Russia. You may not use Crosstalk where doing so is against the law.
 
 Crosstalk depends on Apple Music and on AI providers, and it is still developing. We may change, suspend or stop all or part of it. We do not promise that it will be available without interruption or that a particular host, show or feature will remain.
 
