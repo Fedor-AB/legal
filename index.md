@@ -1,6 +1,6 @@
 ---
-title: Crosstalk — legal
+title: Legal
 ---
-# Crosstalk
+# Legal documents
 
-Privacy policy and terms of use will be published here.
+- [Crosstalk](crosstalk/)
