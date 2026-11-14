@@ -1,6 +1,6 @@
 ---
 title: Crosstalk — Terms of use
-version: 0.2.0-draft
+version: 0.3.0-draft
 effective_date: TBD
 status: draft, not in force
 ---
@@ -24,7 +24,7 @@ These terms are between you and Fedor AB only. Apple is not a party to them. Fed
 
 ## 3. Who can use Crosstalk
 
-You must be at least 18 years old to use Crosstalk. The app is rated 18+ in the App Store.
+You must be at least 18 years old to use Crosstalk, or the age of majority where you live if that is higher. The app is rated 18+ in the App Store. Where the law requires it, the app or the App Store may ask you to confirm that you are an adult.
 
 You need a Crosstalk purchase in the App Store; section 11 explains it.
 
@@ -117,6 +117,8 @@ When your purchase ends or is refunded, the hosts stop working until you buy aga
 
 ## 12. Changes, interruptions and ending
 
+Crosstalk is offered in the App Store countries we choose, and we may add or remove countries. [Countries where Crosstalk is not offered: to be decided.] You may not use Crosstalk where doing so is against the law.
+
 Crosstalk depends on Apple Music and on AI providers, and it is still developing. We may change, suspend or stop all or part of it. We do not promise that it will be available without interruption or that a particular host, show or feature will remain.
 
 We may suspend or end your access if you break these terms. You can stop using Crosstalk at any time by deleting the app; to stop paying, cancel the purchase in your App Store account settings. The privacy policy explains how to have your data deleted.
@@ -135,7 +137,7 @@ Each version of these terms has a version number and an effective date at the to
 
 ## 15. Governing law and disputes
 
-These terms are governed by Swedish law. If you are a consumer living in another country of the EU or EEA, you also keep the protection of the mandatory consumer rules of that country.
+These terms are governed by Swedish law. If you are a consumer, you also keep the protection of the mandatory consumer rules of the country where you live, inside or outside the EU.
 
 If you have a complaint, contact us first at <info@fedor.nu>. [If we cannot settle it, a consumer can turn to the Swedish National Board for Consumer Disputes (Allmänna reklamationsnämnden, ARN), <https://www.arn.se>.] Disputes can be brought before the Swedish courts. A consumer may also bring a claim in the courts of the country where they live.
 

@@ -1,6 +1,6 @@
 ---
 title: Crosstalk — Privacy policy
-version: 0.2.0-draft
+version: 0.3.0-draft
 effective_date: TBD
 status: draft, not in force
 ---
@@ -96,6 +96,8 @@ We share data with authorities only when the law requires it.
 
 ## 6. Transfers outside the EU/EEA
 
+This section describes how data leaves the EU. It applies to every listener, because all listeners' data is handled in the same systems.
+
 Our contracts are with these providers' European companies, but they and their affiliates may process data in the United States and other countries. Such transfers are covered by the European Commission's standard contractual clauses or, for US companies certified under it, by the EU-US Data Privacy Framework. You can ask us for a copy of the safeguards.
 
 Our own server runs at a cloud provider inside the EU: [provider and region to be added].
@@ -121,9 +123,22 @@ Because you have no account with us, we can only find your data through the list
 
 You can also complain to the Swedish Authority for Privacy Protection (Integritetsskyddsmyndigheten, IMY), <https://www.imy.se>, or to the data protection authority in the country where you live.
 
+### 8.1 If you live outside the EU and EEA
+
+Crosstalk is offered in App Store countries around the world. We apply this policy, and the rights listed above, to every listener wherever they live. Your own country's law may give you further rights, and nothing here takes them away.
+
+- **United Kingdom.** The UK GDPR applies to our handling of your data. You can complain to the Information Commissioner's Office, <https://ico.org.uk>. [UK representative: to be decided.]
+- **Switzerland.** The Federal Act on Data Protection applies. You can turn to the Federal Data Protection and Information Commissioner, <https://www.edoeb.admin.ch>.
+- **United States.** We do not sell your personal data, and we do not share it for advertising. We use it only for the purposes in section 3 and disclose it only to the recipients in section 5. If the law of your state gives you rights to know, correct or delete your data, use the contact above, and we will not treat you differently for doing so.
+- **Other countries.** Contact us in the same way. We will handle your request under this policy and under the law that applies to you.
+
+Wherever you live, your data is processed in the EU, where our server is, and in the countries where our AI providers operate, including the United States.
+
 ## 9. Children
 
-Crosstalk is for adults. You must be at least 18 years old to use it, the app is rated 18+ in the App Store, and we do not knowingly process data about anyone younger.
+Crosstalk is for adults. You must be at least 18 years old, or the age of majority where you live if that is higher. The app is rated 18+ in the App Store, and we do not knowingly process data about anyone younger.
+
+[To be added when built: in places where the law requires an app to confirm that its users are adults, the app asks Apple for your age range. Apple tells the app only the range, never your date of birth.]
 
 ## 10. Automated checks
 
