@@ -1,6 +1,6 @@
 ---
 title: Crosstalk — Privacy policy
-version: 0.5.0-draft
+version: 0.5.1-draft
 effective_date: TBD
 status: draft, not in force
 ---
@@ -94,7 +94,7 @@ We use other companies in four roles. Each of them is our processor: it acts on 
 | Script-writing AI | [Company to be added when the contract is signed. We expect to use one of Anthropic's Claude models, bought either from Anthropic or through a cloud provider.] | The text we assemble for the script: the track and playlist details, the time, your note, the show's description, and the scripts of your most recent segments. No identifier of you is included. | Writing the hosts' script. |
 | Speech AI | Google [contracting company to be added when the contract is signed] | The finished script, the chosen voices and the language. No identifier of you is included. | Turning the script into speech. |
 | Hosting | [Cloud provider to be added] | Everything our server stores. | Running our server, in [EU region]. |
-| AI tools that help us operate the service | Anthropic and OpenAI [contracting companies to be added when the contracts are signed] | What a tool reads while it works: the records our server keeps about your listening (section 3.3). The tools are not given the logs that contain IP addresses or the identifiers in section 3.2. [To be confirmed before publication: whether the tools can see the listener identifier that your host history and request records are stored under.] | Monitoring the service, finding and repairing faults, and maintaining it. |
+| AI tools that help us operate the service | Anthropic and OpenAI [contracting companies to be added when the contracts are signed] | What a tool reads while it works: your host history, request records and fault-finding captures (section 3.3). The tools are not given the server and network logs, which contain IP addresses, or the identifiers in section 3.2. [To be confirmed before publication: whether the tools can see the listener identifier that your host history and request records are stored under.] | Monitoring the service, finding and repairing faults, and maintaining it. |
 
 Our contracts with the AI providers do not allow them to train their models on your data. [To be confirmed against each signed contract.]
 

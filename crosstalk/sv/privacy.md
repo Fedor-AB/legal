@@ -1,7 +1,7 @@
 ---
 title: Crosstalk — Integritetspolicy
 lang: sv
-version: 0.5.0-draft
+version: 0.5.1-draft
 effective_date: TBD
 status: draft, not in force
 ---
@@ -95,7 +95,7 @@ Vi anlitar andra företag i fyra roller. Vart och ett av dem är vårt personupp
 | AI som skriver manus | [Företaget läggs till när avtalet är undertecknat. Vi räknar med att använda någon av Anthropics Claude-modeller, köpt antingen från Anthropic eller via en molnleverantör.] | Den text vi sätter samman för manuset: uppgifterna om låtar och spellista, tiden, ditt meddelande, programmets beskrivning och manusen till dina senaste inslag. Ingen identifierare för dig ingår. | Att skriva programledarnas manus. |
 | AI för tal | Google [avtalsparten läggs till när avtalet är undertecknat] | Det färdiga manuset, de valda rösterna och språket. Ingen identifierare för dig ingår. | Att göra om manuset till tal. |
 | Drift av servern | [Molnleverantören läggs till] | Allt som vår server lagrar. | Att driva vår server, i [EU-region]. |
-| AI-verktyg som hjälper oss att driva tjänsten | Anthropic och OpenAI [avtalsparterna läggs till när avtalen är undertecknade] | Det ett verktyg läser medan det arbetar: de uppgifter som vår server sparar om ditt lyssnande (avsnitt 3.3). Verktygen får inte del av de loggar som innehåller IP-adresser eller identifierarna i avsnitt 3.2. [Ska bekräftas före publicering: om verktygen kan se det lyssnar-id som din inslagshistorik och uppgifterna om förfrågningar är sparade under.] | Att övervaka tjänsten, hitta och åtgärda fel och underhålla den. |
+| AI-verktyg som hjälper oss att driva tjänsten | Anthropic och OpenAI [avtalsparterna läggs till när avtalen är undertecknade] | Det ett verktyg läser medan det arbetar: din inslagshistorik, uppgifterna om förfrågningar och felsökningsunderlaget (avsnitt 3.3). Verktygen får inte del av server- och nätverksloggarna, som innehåller IP-adresser, eller identifierarna i avsnitt 3.2. [Ska bekräftas före publicering: om verktygen kan se det lyssnar-id som din inslagshistorik och uppgifterna om förfrågningar är sparade under.] | Att övervaka tjänsten, hitta och åtgärda fel och underhålla den. |
 
 Våra avtal med AI-leverantörerna tillåter inte att de tränar sina modeller på dina uppgifter. [Ska bekräftas mot varje undertecknat avtal.]
 
