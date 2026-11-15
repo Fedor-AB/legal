@@ -1,6 +1,6 @@
 ---
 title: Crosstalk — Privacy policy
-version: 0.3.2-draft
+version: 0.4.0-draft
 effective_date: TBD
 status: draft, not in force
 ---
@@ -12,12 +12,15 @@ status: draft, not in force
 
 Fedor AB (org. nr 559537-2961) is the controller of the personal data described here. Contact for anything about your data: <privacy@fedor.nu>. Postal address: Fedor AB, Fabriksvägen 8, 176 69 Järfälla, Sweden.
 
+Crosstalk is offered in countries of the European Union and the European Economic Area, and this policy is written for listeners there.
+
 ## 2. The short version
 
 - You do not create an account with us. We do not ask for your name, email address or phone number.
 - To use Crosstalk you need a Crosstalk purchase in the App Store. Apple handles the payment, and we never see your payment details.
 - To write what the hosts say, the app sends our server the details of the tracks around your current position, your time zone and language, and any note you wrote to the hosts.
-- Our server passes that information to an AI provider that writes the script, and passes the script to a second AI provider that turns it into speech. The app asks for your permission before this happens.
+- Our server passes that information to an AI provider that writes the script, and passes the script to an AI provider that turns it into speech. The app asks for your permission before this happens.
+- We use AI tools to help us run and repair the service. While they do that work, they can read the data our server holds.
 - We keep a history of the host segments you heard, tied to a random identifier and not to your name.
 - We do not use advertising, analytics or tracking tools, and we do not sell data.
 
@@ -74,39 +77,40 @@ Deleting the app removes this data. [To be confirmed: except the listener identi
 ## 4. Legal basis
 
 - **Performing our agreement with you** (GDPR Article 6(1)(b)). Checking your purchase, generating host segments, keeping your host history and giving the hosts continuity are what you ask Crosstalk to do under the [terms of use](terms).
-- **Our legitimate interests** (Article 6(1)(f)). We have an interest in keeping the service secure and preventing abuse. This covers the app integrity check, limits on how often segments can be generated, logs, and fault-finding. You can object to this processing; see section 8.
+- **Our legitimate interests** (Article 6(1)(f)). We have an interest in keeping the service secure, preventing abuse and keeping the service working. This covers the app integrity check, limits on how often segments can be generated, logs, fault-finding, and the use of AI tools to monitor and repair the service (section 5). You can object to this processing; see section 8.
 
-Before the first host segment, the app asks you to confirm that the data in section 3.1 may be sent to the AI providers in section 5. Without that confirmation the hosts cannot work, and none of that data is sent to our server or to the AI providers. The app still contacts our server when it starts, to check that your version is supported and that the app is genuine.
+Before the first host segment, the app asks you to confirm that the data in section 3.1 may be sent to the AI providers in section 5. Without that confirmation the hosts cannot work, and none of that data is sent to our server or to the AI providers. The app still contacts our server when it starts, to check that your version is supported and that the app is genuine. That contact leaves the technical records listed under "Server and network logs" in section 3.3. [To be settled before publication: whether the AI tools in section 5 may read records made before you gave this permission.]
 
 ## 5. Who receives your data
 
-We use these companies as processors. They act on our instructions and may not use your data for their own purposes.
+We use other companies in four roles. Each of them is our processor: it acts on our instructions and may not use your data for its own purposes. [To be confirmed for each company when its contract is signed.]
 
-| Recipient | What they receive | Purpose |
-|---|---|---|
-| Anthropic (Anthropic Ireland, Limited) | The text we assemble for the script: the track and playlist details, the time, your note, the show's description, and the scripts of your most recent segments. No identifier of you is included. | Writing the hosts' script. |
-| Google ([Google Cloud EMEA Limited]) | The finished script, the chosen voices and the language. No identifier of you is included. | Turning the script into speech. |
-| [Cloud provider: name to be added] | Everything our server stores. | Running our server, in [EU region]. |
+| Role | Company | What it receives | Purpose |
+|---|---|---|---|
+| Script-writing AI | [Company to be added when the contract is signed. We expect to use one of Anthropic's Claude models, bought either from Anthropic or through a cloud provider.] | The text we assemble for the script: the track and playlist details, the time, your note, the show's description, and the scripts of your most recent segments. No identifier of you is included. | Writing the hosts' script. |
+| Speech AI | Google [contracting company to be added when the contract is signed] | The finished script, the chosen voices and the language. No identifier of you is included. | Turning the script into speech. |
+| Hosting | [Cloud provider to be added] | Everything our server stores. | Running our server, in [EU region]. |
+| AI tools that help us operate the service | Anthropic and OpenAI [contracting companies to be added when the contracts are confirmed] | Whatever a tool reads while it works. This can be anything in section 3.3, including your identifiers, your host history, logs with your IP address, and fault-finding captures. | Monitoring the service, finding and repairing faults, and maintaining it. |
 
-Under Anthropic's commercial terms, Anthropic may not train its models on this content. Under Google's terms for its paid service, Google does not use this content to improve its products.
+Our contracts with the AI providers do not allow them to train their models on your data. [To be confirmed against each signed contract.]
 
-Apple is involved as an independent provider, not as our processor: Apple delivers the app, handles your purchase and payment, plays the music through your Apple Music subscription, and issues the app integrity proof. Apple's privacy policy applies to what Apple does.
+If we add or replace a company in this table, we publish a new version of this policy first, and the app tells you about the change.
+
+Apple is involved as an independent provider, not as our processor: Apple delivers the app, sells you the purchase and takes the payment, plays the music through your Apple Music subscription, and issues the app integrity proof. Apple's privacy policy applies to what Apple does.
 
 We share data with authorities only when the law requires it.
 
 ## 6. Transfers outside the EU/EEA
 
-This section describes how data leaves the EU. It applies to every listener, because all listeners' data is handled in the same systems.
-
-Our contracts are with these providers' European companies, but they and their affiliates may process data in the United States and other countries. Such transfers are covered by the European Commission's standard contractual clauses or, for US companies certified under it, by the EU-US Data Privacy Framework. You can ask us for a copy of the safeguards.
-
 Our own server runs at a cloud provider inside the EU: [provider and region to be added].
+
+The AI providers in section 5 are American groups. Even where our contract is with a provider's European company, that company and its affiliates may process data in the United States and other countries. Such transfers are covered by the European Commission's standard contractual clauses or, for US companies certified under it, by the EU-US Data Privacy Framework. You can ask us for a copy of the safeguards.
 
 ## 7. How long we keep data
 
 The periods are listed in section 3.3. When a period ends we delete the data. If you ask us to delete your data, we delete your host history, your request records and your identifiers without waiting for those periods to end.
 
-Anthropic and Google keep the content we send them for a limited time under their own terms, to detect misuse, and then delete it. [Periods to be confirmed against the signed contracts.]
+The AI providers keep the content we send them for a limited time under their own terms, to detect misuse, and then delete it. [Periods to be confirmed against the signed contracts.]
 
 ## 8. Your rights
 
@@ -123,21 +127,9 @@ Because you have no account with us, we can only find your data through the list
 
 You can also complain to the Swedish Authority for Privacy Protection (Integritetsskyddsmyndigheten, IMY), <https://www.imy.se>, or to the data protection authority in the country where you live.
 
-### 8.1 If you live outside the EU and EEA
-
-Crosstalk is offered in selected App Store countries, and the list grows over time. [Country-specific paragraphs are added as each group of countries opens.] We apply this policy, and the rights listed above, to every listener wherever they live. Your own country's law may give you further rights, and nothing here takes them away.
-
-- **Switzerland.** The Federal Act on Data Protection applies. You can turn to the Federal Data Protection and Information Commissioner, <https://www.edoeb.admin.ch>.
-- **United States.** We do not sell your personal data, and we do not share it for advertising. We use it only for the purposes in section 3 and disclose it only to the recipients in section 5. If the law of your state gives you rights to know, correct or delete your data, use the contact above, and we will not treat you differently for doing so.
-- **Other countries.** Contact us in the same way. We will handle your request under this policy and under the law that applies to you.
-
-Wherever you live, your data is processed in the EU, where our server is, and in the countries where our AI providers operate, including the United States.
-
 ## 9. Children
 
-Crosstalk is for adults. You must be at least 18 years old, or the age of majority where you live if that is higher. The app is rated 18+ in the App Store, and we do not knowingly process data about anyone younger.
-
-[To be added when built: in places where the law requires an app to confirm that its users are adults, the app asks Apple for your age range. Apple tells the app only the range, never your date of birth.]
+Crosstalk is for adults. You must be at least 18 years old. The app is rated 18+ in the App Store, and we do not knowingly process data about anyone younger.
 
 ## 10. Automated checks
 
@@ -147,7 +139,7 @@ We do not make decisions about you that have legal or similarly significant effe
 
 ## 11. Security
 
-Data travels between the app and our server over an encrypted connection. Requests are accepted only from a genuine copy of the app. Access to the server is limited to Fedor AB.
+Data travels between the app and our server over an encrypted connection. Requests are accepted only from a genuine copy of the app. Access to the server and the data on it is limited to the people at Fedor AB who run the service and to the AI tools they use for that work, described in section 5.
 
 ## 12. Changes to this policy
 

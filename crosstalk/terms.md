@@ -1,6 +1,6 @@
 ---
 title: Crosstalk — Terms of use
-version: 0.3.3-draft
+version: 0.4.0-draft
 effective_date: TBD
 status: draft, not in force
 ---
@@ -24,7 +24,7 @@ These terms are between you and Fedor AB only. Apple is not a party to them. Fed
 
 ## 3. Who can use Crosstalk
 
-You must be at least 18 years old to use Crosstalk, or the age of majority where you live if that is higher. The app is rated 18+ in the App Store. Where the law requires it, the app or the App Store may ask you to confirm that you are an adult.
+You must be at least 18 years old to use Crosstalk. The app is rated 18+ in the App Store.
 
 You need a Crosstalk purchase in the App Store; section 11 explains it.
 
@@ -109,7 +109,9 @@ You must not:
 
 Access to the Crosstalk service requires a purchase in the App Store. [Product, price and period to be added.] The price is shown in the App Store before you buy.
 
-Apple takes the payment. Renewal, cancellation and refunds are handled by Apple under Apple's terms, and you manage the purchase in your App Store account settings. [Right of withdrawal wording to be confirmed.]
+Apple sells you the purchase and takes the payment. Renewal, cancellation and refunds are handled by Apple under Apple's terms, and you manage the purchase in your App Store account settings.
+
+As a consumer you can withdraw from a purchase within 14 days without giving a reason. Because Apple sold you the purchase, you withdraw through Apple: Apple's terms for the App Store explain how.
 
 What you pay for is the Crosstalk service: the AI hosts and their shows. It is not a payment for music or for access to Apple Music. Your Apple Music subscription is a separate purchase from Apple.
 
@@ -117,7 +119,7 @@ When your purchase ends or is refunded, the hosts stop working until you buy aga
 
 ## 12. Changes, interruptions and ending
 
-Crosstalk is offered in the App Store countries we choose, and we may add or remove countries. [The list of countries at launch is to be decided; the release is gradual. Mainland China, Russia and the United Kingdom are not in the first release.] You may not use Crosstalk where doing so is against the law.
+Crosstalk is offered in the App Store of the countries of the European Union and the European Economic Area that we choose, and we may add or remove countries. The App Store shows whether Crosstalk is available in your country.
 
 Crosstalk depends on Apple Music and on AI providers, and it is still developing. We may change, suspend or stop all or part of it. We do not promise that it will be available without interruption or that a particular host, show or feature will remain.
 
@@ -137,7 +139,9 @@ Each version of these terms has a version number and an effective date at the to
 
 ## 15. Governing law and disputes
 
-These terms are governed by Swedish law. If you are a consumer, you also keep the protection of the mandatory consumer rules of the country where you live, inside or outside the EU.
+These terms are governed by Swedish law. If you are a consumer, you also keep the protection of the mandatory consumer rules of the country where you live.
+
+These terms are written in English.
 
 If you have a complaint, contact us first at <info@fedor.nu>. [If we cannot settle it, a consumer can turn to the Swedish National Board for Consumer Disputes (Allmänna reklamationsnämnden, ARN), <https://www.arn.se>.] Disputes can be brought before the Swedish courts. A consumer may also bring a claim in the courts of the country where they live.
 
