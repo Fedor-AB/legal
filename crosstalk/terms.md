@@ -1,6 +1,6 @@
 ---
 title: Crosstalk — Terms of use
-version: 0.4.2-draft
+version: 0.5.0-draft
 effective_date: TBD
 status: draft, not in force
 ---
@@ -43,11 +43,11 @@ The hosts are fictional characters. An AI language model writes their lines and 
 Because the segments are generated automatically:
 
 - They can be wrong, out of date or made up, including statements about artists, songs, dates and events.
-- They can occasionally be offensive or unsuitable, even though we instruct the system not to be.
+- They can occasionally be offensive or unsuitable[, even though we instruct the system not to be]. [To be confirmed before publication: that such an instruction exists.]
 - They are entertainment. They are not news, and they are not professional advice of any kind.
 - The hosts do not speak for any artist, label, broadcaster or other real person or organisation, and nothing they say is an endorsement.
 
-Do not rely on what a host says for any decision that matters.
+No one can guarantee what an AI model writes: not we, and not the companies that provide the models. Do not treat what a host says about a person, a date or an event as fact without checking it, and do not rely on it for any decision that matters.
 
 ## 6. What you give to Crosstalk
 
@@ -56,6 +56,8 @@ You can set preferences for the hosts, including free text you write for them. [
 You keep whatever rights you have in your content. You give us permission to use it to run Crosstalk for you: to check it, store it, send it to the AI providers named in the privacy policy, and generate host segments from it. This permission lasts for as long as we hold the content.
 
 You are responsible for your content. You confirm that you have the right to submit it and that it follows section 7.
+
+What you write steers the hosts. When you ask them for something, what they say in reply follows from your request, and you are responsible for what you asked for.
 
 ## 7. Rules for your content
 
@@ -71,7 +73,8 @@ Your content must not contain or ask the hosts to produce any of the following:
 8. Personal information about someone else.
 9. Material you have no right to use, such as someone else's script, lyrics or trademark.
 10. Advertising, or anything meant to sell to or solicit other people.
-11. Text meant to make the system ignore its own rules, reveal its instructions, or behave as something other than a radio show.
+11. Text meant to make the system ignore its own rules, reveal its instructions or how it works, or behave as something other than a radio show.
+12. Text meant to provoke the hosts into saying something these rules forbid.
 
 We also set technical limits, such as the maximum length of the text you write for the hosts or of a world and how often you can generate.
 
@@ -103,6 +106,8 @@ You must not:
 - use Crosstalk for public performance, broadcasting or any commercial purpose;
 - access our service other than through the app, or interfere with how the app proves it is genuine;
 - try to get around limits, checks or security measures;
+- reverse engineer Crosstalk or the AI systems behind it, try to extract their instructions or models, or use Crosstalk to build or train another AI system;
+- overload or abuse the service, for example with automated or repeated requests;
 - use Crosstalk to harm others or to break the law.
 
 ## 11. Purchase and price
@@ -123,7 +128,7 @@ Crosstalk is offered in the App Store of the countries of the European Union and
 
 Crosstalk depends on Apple Music and on AI providers, and it is still developing. We may change, suspend or stop all or part of it. We do not promise that it will be available without interruption or that a particular host, show or feature will remain.
 
-We may suspend or end your access if you break these terms. You can stop using Crosstalk at any time by deleting the app; to stop paying, cancel the purchase in your App Store account settings. The privacy policy explains how to have your data deleted.
+We may suspend or end your access if you break these terms. If you deliberately try to break, provoke or abuse the system (items 11 and 12 of section 7; the points of section 10 about access, limits, reverse engineering and abuse), you answer for the harm this causes to us or to other people, as the law provides. You can stop using Crosstalk at any time by deleting the app; to stop paying, cancel the purchase in your App Store account settings. The privacy policy explains how to have your data deleted.
 
 ## 13. Our responsibility to you
 
