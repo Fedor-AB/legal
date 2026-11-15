@@ -1,6 +1,6 @@
 ---
 title: Crosstalk — Terms of use
-version: 0.4.0-draft
+version: 0.4.1-draft
 effective_date: TBD
 status: draft, not in force
 ---
@@ -111,7 +111,7 @@ Access to the Crosstalk service requires a purchase in the App Store. [Product, 
 
 Apple sells you the purchase and takes the payment. Renewal, cancellation and refunds are handled by Apple under Apple's terms, and you manage the purchase in your App Store account settings.
 
-As a consumer you can withdraw from a purchase within 14 days without giving a reason. Because Apple sold you the purchase, you withdraw through Apple: Apple's terms for the App Store explain how.
+As a consumer you can withdraw within 14 days of buying, without giving a reason. For a subscription this applies to the first purchase and not to renewals. Because Apple sold you the purchase, you withdraw through Apple: Apple's terms for the App Store explain how.
 
 What you pay for is the Crosstalk service: the AI hosts and their shows. It is not a payment for music or for access to Apple Music. Your Apple Music subscription is a separate purchase from Apple.
 

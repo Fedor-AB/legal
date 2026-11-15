@@ -1,6 +1,6 @@
 ---
 title: Crosstalk — Privacy policy
-version: 0.4.0-draft
+version: 0.4.1-draft
 effective_date: TBD
 status: draft, not in force
 ---
@@ -79,7 +79,7 @@ Deleting the app removes this data. [To be confirmed: except the listener identi
 - **Performing our agreement with you** (GDPR Article 6(1)(b)). Checking your purchase, generating host segments, keeping your host history and giving the hosts continuity are what you ask Crosstalk to do under the [terms of use](terms).
 - **Our legitimate interests** (Article 6(1)(f)). We have an interest in keeping the service secure, preventing abuse and keeping the service working. This covers the app integrity check, limits on how often segments can be generated, logs, fault-finding, and the use of AI tools to monitor and repair the service (section 5). You can object to this processing; see section 8.
 
-Before the first host segment, the app asks you to confirm that the data in section 3.1 may be sent to the AI providers in section 5. Without that confirmation the hosts cannot work, and none of that data is sent to our server or to the AI providers. The app still contacts our server when it starts, to check that your version is supported and that the app is genuine. That contact leaves the technical records listed under "Server and network logs" in section 3.3. [To be settled before publication: whether the AI tools in section 5 may read records made before you gave this permission.]
+Before the first host segment, the app asks you to confirm that the data in section 3.1 may be sent to the script-writing and speech AI providers in section 5. Without that confirmation the hosts cannot work, and none of that data is sent to our server or to the AI providers. The app still contacts our server when it starts, to check that your version is supported and that the app is genuine. That contact leaves the technical records listed under "Server and network logs" in section 3.3. [To be settled before publication: whether the AI tools in section 5 may read records made before you gave this permission.]
 
 ## 5. Who receives your data
 
