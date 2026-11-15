@@ -1,6 +1,6 @@
 ---
 title: Crosstalk — AI disclosure
-version: 0.2.0-draft
+version: 0.3.0-draft
 effective_date: TBD
 status: draft, not in force
 ---
@@ -18,15 +18,17 @@ The music is different. Crosstalk plays your own Apple Music through your own su
 
 ## In-app texts
 
-These are the texts the app shows. The wording is fixed here, and the app displays it unchanged.
+The designer decides how these texts look and where they stand, within the requirements in the next section.
 
-**Short label** (shown wherever a host is speaking or a transcript is displayed):
+**First notice** (on the screen that asks for your permission, before the first host segment plays):
 
-> AI-generated hosts
+> Crosstalk's hosts are created by AI.
 
-**First-run notice** (shown once, before the first host segment plays):
+**Label** (on the switch for the hosts in Settings):
 
-> The hosts on Crosstalk are AI. An AI model writes their lines and an AI voice speaks them. They are not real people, and what they say can be wrong.
+> AI Hosts
+
+[The three texts below are proposed and are confirmed when they are built.]
 
 **About text** (Settings):
 
@@ -44,15 +46,15 @@ These are the texts the app shows. The wording is fixed here, and the app displa
 
 The designer decides where each text goes. Whatever the layout, these five things must hold.
 
-1. **Before the first host segment.** A listener sees the first-run notice no later than the first time a host speaks. Article 50(5) of the EU AI Act requires the information "at the latest at the time of the first interaction or exposure".
-2. **Clear and distinguishable.** The notice is ordinary readable text on its own, not a line inside the terms of use and not hidden behind a link. The same article requires a "clear and distinguishable manner".
-3. **Still visible later.** The short label stays available whenever a host is speaking or a transcript is on screen, so a listener who skipped the first-run notice, or someone who picks up the phone later, can still tell.
+1. **Before the first host segment.** A listener sees the first notice no later than the first time a host speaks. Article 50(5) of the EU AI Act requires the information "at the latest at the time of the first interaction or exposure".
+2. **Clear and distinguishable.** The notice is ordinary readable text on the screen itself, not a line inside the terms of use and not hidden behind a link. The same article requires a "clear and distinguishable manner".
+3. **Findable later.** The switch for the hosts in Settings carries the label, so a listener who skipped past the first notice can still tell.
 4. **Accessible.** Every text is real text that VoiceOver reads and Dynamic Type scales, with sufficient contrast. Article 50(5) requires the information to "conform to the applicable accessibility requirements".
-5. **Covers both script and voice.** The wording says that the words and the voice are both AI-generated. A label that says only "AI voice" is not enough.
+5. **Covers both script and voice.** The wording says that the hosts are made by AI, which covers their words and their voices. A label that says only "AI voice" is not enough.
 
 ## Screen-off listening
 
-Much listening happens with the screen off, in a car or over a speaker, and other people in the room hear the hosts without ever seeing the app. The lock-screen title above covers that case.
+Much listening happens with the screen off, in a car or over a speaker, and other people in the room hear the hosts without ever seeing the app. [To be confirmed when built: the lock-screen title above covers that case.]
 
 A spoken notice at the start of a listening session is not part of the first release.
 
@@ -67,4 +69,4 @@ Every host segment is also marked as AI-generated in two ways that software can 
 
 ## Languages
 
-The first-run notice and the short label are shown in the app's interface language. English is the reference text.
+The first notice and the label are shown in the app's interface language. English is the reference text.

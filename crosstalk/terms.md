@@ -1,6 +1,6 @@
 ---
 title: Crosstalk — Terms of use
-version: 0.4.1-draft
+version: 0.4.2-draft
 effective_date: TBD
 status: draft, not in force
 ---
@@ -51,7 +51,7 @@ Do not rely on what a host says for any decision that matters.
 
 ## 6. What you give to Crosstalk
 
-You can type a note to the hosts. [When the "Build your own show" feature is available, you can also describe a station and its hosts, which we call a "world".] Together these are "your content".
+You can set preferences for the hosts, including free text you write for them. [When the "Build your own show" feature is available, you can also describe a station and its hosts, which we call a "world".] Together these are "your content".
 
 You keep whatever rights you have in your content. You give us permission to use it to run Crosstalk for you: to check it, store it, send it to the AI providers named in the privacy policy, and generate host segments from it. This permission lasts for as long as we hold the content.
 
@@ -73,7 +73,7 @@ Your content must not contain or ask the hosts to produce any of the following:
 10. Advertising, or anything meant to sell to or solicit other people.
 11. Text meant to make the system ignore its own rules, reveal its instructions, or behave as something other than a radio show.
 
-We also set technical limits, such as the maximum length of a note or a world and how often you can generate.
+We also set technical limits, such as the maximum length of the text you write for the hosts or of a world and how often you can generate.
 
 ## 8. How we check worlds
 

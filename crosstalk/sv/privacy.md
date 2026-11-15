@@ -1,7 +1,7 @@
 ---
 title: Crosstalk — Integritetspolicy
 lang: sv
-version: 0.5.1-draft
+version: 0.6.0-draft
 effective_date: TBD
 status: draft, not in force
 ---
@@ -21,11 +21,11 @@ Crosstalk erbjuds i länder inom Europeiska unionen och Europeiska ekonomiska sa
 
 - Du skapar inget konto hos oss. Vi frågar inte efter ditt namn, din e-postadress eller ditt telefonnummer.
 - För att använda Crosstalk behöver du ett Crosstalk-köp i App Store. Apple hanterar betalningen, och vi ser aldrig dina betalningsuppgifter.
-- För att skriva det programledarna säger skickar appen uppgifter till vår server om låtarna runt den plats där du är i uppspelningen, din tidszon och ditt språk samt det meddelande du eventuellt har skrivit till programledarna.
+- För att skriva det programledarna säger skickar appen uppgifter till vår server om låtarna runt den plats där du är i uppspelningen, din tidszon och ditt språk samt dina önskemål för programledarna.
 - Vår server skickar den informationen vidare till en AI-leverantör som skriver manuset, och skickar manuset till en AI-leverantör som gör om det till tal. Appen ber om din tillåtelse innan det sker.
-- Vi använder AI-verktyg som hjälper oss att driva och reparera tjänsten. När de gör det arbetet kan de läsa det som vår server sparar om ditt lyssnande. De får inte del av de loggar som innehåller din IP-adress eller dina identifierare.
+- Vi använder AI-verktyg från andra företag som hjälper oss att driva och reparera tjänsten. När de gör det arbetet kan de läsa det som vår databas innehåller om ditt lyssnande, sparat under en slumpmässig identifierare. De får inte del av de loggar som innehåller din IP-adress.
 - Vi sparar en historik över de inslag med programledarna som du har hört. Den är knuten till en slumpmässig identifierare och inte till ditt namn.
-- Vi använder inga verktyg för reklam, analys eller spårning, och vi säljer inga uppgifter.
+- Vi använder inga verktyg för reklam eller spårning, vi använder inga analystjänster från andra företag och vi säljer inga uppgifter. [När kraschrapporter och användningsstatistik finns: vi samlar in dem själva, och bara om du slår på dem (avsnitt 3.5).]
 
 ## 3. Vad vi behandlar och varför
 
@@ -37,7 +37,7 @@ Crosstalk erbjuds i länder inom Europeiska unionen och Europeiska ekonomiska sa
 | Vad du spelar från | Typen (spellista, album eller samling), dess titel och upp till 21 låtar runt den plats där du är. Titeln på en spellista är den du själv har gett den. | För att programledarna ska känna till låtens sammanhang. |
 | Tid | Tiden då inslaget börjar och din tidszon. | För att programledarna ska veta vilken tid på dygnet och vilken veckodag det är. |
 | Språk | Programmets språk, de språk som är inställda på din enhet och det programledarspråk du eventuellt har valt. | För att välja vilket språk programledarna talar. |
-| Ditt meddelande | Fritext som du har skrivit till programledarna i Inställningar, om du har gjort det. | För att programledarna ska kunna svara på det. |
+| Dina önskemål för programledarna | Det du har ställt in för programledarna i Inställningar, inklusive fritext som du har skrivit till dem. | För att programledarna ska kunna följa dem. |
 | Uppgifter om appen | Appens identifierare och version. | För att kontrollera att din version av appen stöds. |
 
 Vi får inte ditt Apple Music-bibliotek, din lyssningshistorik utöver låtarna ovan, ditt Apple-konto, din plats eller dina kontakter.
@@ -60,9 +60,10 @@ Vi får inte ditt Apple Music-bibliotek, din lyssningshistorik utöver låtarna 
 | Inslag du inte hörde | Samma uppgifter för ett inslag som skapades men aldrig spelades upp. | 24 timmar |
 | Ljudet till ett inslag | Det skapade ljudet, som sparas så att appen kan hämta det igen om anslutningen bryts. | 15 minuter |
 | Uppgifter om förfrågningar | Vilka förfrågningar som gjordes, när, och om de lyckades. De innehåller lyssnar-id:t och inga uppgifter om låtar. | 30 dagar |
+| Dina önskemål för programledarna | Det du har ställt in och skrivit för programledarna. [Ska bekräftas: om detta sparas på vår server eller bara skickas med varje förfrågan.] | [Lagringstiden ska beslutas] |
 | Identifierare | Lyssnar-id:t och appintegritetsnyckeln med Apples intyg för den. | [Lagringstiden ska beslutas] |
 | Felsökningsunderlag | Hela den text som skickades till AI-leverantören och dess svar. [Ska bekräftas: avstängt i normal drift och påslaget bara under en begränsad tid för att utreda ett fel.] | 30 dagar |
-| Server- och nätverksloggar | Tekniska uppgifter om förfrågningar och fel: tid, begärd adress, resultat, din IP-adress, den app- och systemversion som din enhet uppger samt en hänvisning till appintegritetsnyckeln. [Ska bekräftas på produktionsservern: loggarna innehåller inga uppgifter om låtar och ingen text från ditt meddelande.] | 14 dagar |
+| Server- och nätverksloggar | Tekniska uppgifter om förfrågningar och fel: tid, begärd adress, resultat, din IP-adress, den app- och systemversion som din enhet uppger samt en hänvisning till appintegritetsnyckeln. [Ska bekräftas på produktionsservern: loggarna innehåller inga uppgifter om låtar och ingen text som du har skrivit till programledarna.] | 14 dagar |
 
 [När funktionen ”Build your own show” finns: den beskrivning av stationen och programledarna som du skriver, resultatet av vår automatiska kontroll av den och den godkända världen, som sparas på din enhet.]
 
@@ -70,19 +71,32 @@ Vi får inte ditt Apple Music-bibliotek, din lyssningshistorik utöver låtarna 
 
 Appen sparar följande på din enhet och ingen annanstans:
 
-- dina inställningar: ditt meddelande till programledarna, det program- och programledarspråk du har valt och hur ditt bibliotek är sorterat;
+- dina inställningar: dina önskemål för programledarna, det program- och programledarspråk du har valt och hur ditt bibliotek är sorterat [ska bekräftas: önskemålen för programledarna kan också sparas på vår server, se avsnitt 3.3];
 - en lista över upp till 25 album och spellistor som du nyligen har öppnat, som hänvisningar utan titlar;
 - en hänvisning till appintegritetsnyckeln;
 - ljudet till ett inslag medan det spelas och, om ett inslag avbröts, det ljudet tillsammans med titel, artist och album för låten som följer efter det, så att inslaget kan fortsätta.
 
-När du raderar appen tas de här uppgifterna bort. [Ska bekräftas: utom lyssnar-id:t, om det sparas i din iCloud-nyckelring.]
+När du raderar appen tas de här uppgifterna bort. [Ska bekräftas: utom lyssnar-id:t, om det sparas i din iCloud-nyckelring.] [När användningsstatistik finns: och utom analysidentifieraren, se avsnitt 3.5.]
+
+### 3.5 Kraschrapporter och användningsstatistik
+
+[Det här avsnittet gäller när de två funktionerna finns. Båda är avstängda tills du slår på dem, och var och en har sin egen omkopplare.]
+
+**Kraschrapporter.** Om du slår på dem skickar appen, efter en krasch eller en låsning, den tekniska rapport som iOS har tagit fram till vår server: vilken del av appens kod som kördes (stackspårningen), appens version och bygge, enhetsmodellen och iOS-versionen. Innan rapporten skickas tar appen bort region, processnummer, minnesadresser, texten i felmeddelanden och den exakta tiden. Rapporten innehåller ingen identifierare, och vi sparar inte den IP-adress som den kom från. Vi sparar en rapport i 90 dagar.
+
+**Användningsstatistik.** Om du slår på den skickar appen en kort lista med händelser till vår server: när uppspelningen startar, hur lång tid det tar innan du hör ljud, när ett inslag börjar och slutar, när du hoppar över, när du slår på eller av programledarna och stegen från att du kommer i gång till köpet. Varje händelse innehåller en analysidentifierare, ett slumpmässigt nummer som appen skapar när du samtycker. [Ska bekräftas: analysidentifieraren är inte kopplad till ditt lyssnar-id eller din inslagshistorik.] Vi använder händelserna för att se hur appen fungerar och för att förbättra den. Vi använder också analysidentifieraren för att ge olika lyssnare olika versioner av en funktion och jämföra resultaten.
+
+Analysidentifieraren sparas i enhetens nyckelring. Den finns kvar där om du raderar appen, och när du har installerat appen igen används den bara om du samtycker på nytt. När du slår av användningsstatistiken tas den bort från din enhet [ska bekräftas: och de händelser som är sparade under den på vår server raderas]. Vi sparar händelser i [30 till 90 dagar, ska beslutas], och vi raderar allt som är sparat under en analysidentifierare efter 90 dagar utan aktivitet.
+
+Vi driver båda på vår egen server. Inget analysföretag utanför oss tar emot de här uppgifterna.
 
 ## 4. Rättslig grund
 
 - **Fullgöra vårt avtal med dig** (artikel 6.1 b i dataskyddsförordningen). Att kontrollera ditt köp, skapa inslag, spara din inslagshistorik och ge programledarna en röd tråd är det du ber Crosstalk att göra enligt [användarvillkoren](../terms) (på engelska).
-- **Våra berättigade intressen** (artikel 6.1 f). Vi har ett intresse av att hålla tjänsten säker, förhindra missbruk och hålla tjänsten i gång. Det omfattar kontrollen av appens äkthet, gränser för hur ofta inslag kan skapas, loggar, felsökning och användningen av AI-verktyg för att övervaka och reparera tjänsten (avsnitt 5). Du kan invända mot den här behandlingen; se avsnitt 8.
+- **Våra berättigade intressen** (artikel 6.1 f). Vi har ett intresse av att hålla tjänsten säker, förhindra missbruk och hålla tjänsten i gång. Det omfattar kontrollen av appens äkthet, gränser för hur ofta inslag kan skapas, loggar, felsökning och användningen av AI-verktyg för att övervaka och reparera tjänsten (avsnitt 5). [Om vi räknar aktiva installationer: det omfattar också att räkna hur många kopior av appen som har varit aktiva de senaste 30 dagarna. Vi räknar de lyssnar-id:n som har setts under den tiden och sparar bara summan.] Du kan invända mot den här behandlingen; se avsnitt 8.
+- **Ditt samtycke** (artikel 6.1 a). [När de finns:] kraschrapporter och användningsstatistik (avsnitt 3.5). Du kan när som helst återkalla samtycket genom att slå av dem i Inställningar. Det påverkar inte det som har gjorts dessförinnan.
 
-Före det första inslaget ber appen dig att tillåta två saker: att uppgifterna i avsnitt 3.1 skickas till de AI-leverantörer som skriver och ger röst åt programledarna, och att de AI-verktyg som vi använder för att driva tjänsten får läsa det som vår server sparar om ditt lyssnande. Skärmen namnger företagen. Utan den tillåtelsen kan programledarna inte fungera, och inga av de uppgifterna skickas till vår server eller till någon AI-leverantör.
+Före det första inslaget ber appen dig att tillåta delning med AI-tjänster. Skärmen säger kort vad som delas och varför, och den här policyn ger detaljerna: uppgifterna i avsnitt 3.1 och mottagarna i avsnitt 5. Din tillåtelse omfattar de AI-leverantörer som skriver och ger röst åt programledarna och de AI-verktyg som hjälper oss att driva tjänsten. Utan den tillåtelsen kan programledarna inte fungera, och inga av uppgifterna i avsnitt 3.1 skickas till vår server eller till någon AI-leverantör. Du kan när som helst ändra ditt val i Inställningar.
 
 Appen kontaktar ändå vår server när den startar, för att kontrollera att din version stöds och att appen är äkta. Den kontakten lämnar de tekniska uppgifter som anges under ”Server- och nätverksloggar” i avsnitt 3.3. AI-verktygen i avsnitt 5 får inte del av de loggarna.
 
@@ -92,14 +106,14 @@ Vi anlitar andra företag i fyra roller. Vart och ett av dem är vårt personupp
 
 | Roll | Företag | Vad det tar emot | Ändamål |
 |---|---|---|---|
-| AI som skriver manus | [Företaget läggs till när avtalet är undertecknat. Vi räknar med att använda någon av Anthropics Claude-modeller, köpt antingen från Anthropic eller via en molnleverantör.] | Den text vi sätter samman för manuset: uppgifterna om låtar och spellista, tiden, ditt meddelande, programmets beskrivning och manusen till dina senaste inslag. Ingen identifierare för dig ingår. | Att skriva programledarnas manus. |
+| AI som skriver manus | [Företaget läggs till när avtalet är undertecknat. Vi räknar med att använda någon av Anthropics Claude-modeller, köpt antingen från Anthropic eller via en molnleverantör.] | Den text vi sätter samman för manuset: uppgifterna om låtar och spellista, tiden, dina önskemål för programledarna, programmets beskrivning och manusen till dina senaste inslag. Ingen identifierare för dig ingår. | Att skriva programledarnas manus. |
 | AI för tal | Google [avtalsparten läggs till när avtalet är undertecknat] | Det färdiga manuset, de valda rösterna och språket. Ingen identifierare för dig ingår. | Att göra om manuset till tal. |
 | Drift av servern | [Molnleverantören läggs till] | Allt som vår server lagrar. | Att driva vår server, i [EU-region]. |
-| AI-verktyg som hjälper oss att driva tjänsten | Anthropic och OpenAI [avtalsparterna läggs till när avtalen är undertecknade] | Det ett verktyg läser medan det arbetar: din inslagshistorik, uppgifterna om förfrågningar och felsökningsunderlaget (avsnitt 3.3). Verktygen får inte del av server- och nätverksloggarna, som innehåller IP-adresser, eller identifierarna i avsnitt 3.2. [Ska bekräftas före publicering: om verktygen kan se det lyssnar-id som din inslagshistorik och uppgifterna om förfrågningar är sparade under.] | Att övervaka tjänsten, hitta och åtgärda fel och underhålla den. |
+| AI-verktyg som hjälper oss att driva tjänsten | [Företagen namnges här när de är valda.] Leverantörer av AI-modeller och AI-verktyg för programmering, som är amerikanska koncerner. Vi använder dem enligt företagsvillkor som gör dem till våra personuppgiftsbiträden. | Det ett verktyg läser medan det arbetar: databasen bakom tjänsten som den är. Det är din inslagshistorik, dina önskemål för programledarna och uppgifterna om förfrågningar (avsnitt 3.3), sparade under ditt lyssnar-id, samt felsökningsunderlaget. Vi har inte ditt namn eller ditt Apple-konto, så ett verktyg kan inte se dem. Om du skriver personliga uppgifter i fritext till programledarna kan ett verktyg läsa dem. Verktygen får inte del av server- och nätverksloggarna, som innehåller IP-adresser. | Att övervaka tjänsten, hitta och åtgärda fel och underhålla den. |
 
 Våra avtal med AI-leverantörerna tillåter inte att de tränar sina modeller på dina uppgifter. [Ska bekräftas mot varje undertecknat avtal.]
 
-Om vi lägger till eller byter ett företag i den här tabellen publicerar vi först en ny version av den här policyn, och appen informerar dig om ändringen.
+Om vi lägger till eller byter ett företag i den här tabellen publicerar vi först en ny version av den här policyn, och appen informerar dig om ändringen. Du kan när som helst fråga oss vilka företag som har tagit emot dina uppgifter.
 
 Apple deltar som självständig leverantör, inte som vårt personuppgiftsbiträde: Apple levererar appen, säljer köpet till dig och tar emot betalningen, spelar musiken genom din Apple Music-prenumeration och utfärdar intyget om appens äkthet. För det Apple gör gäller Apples integritetspolicy.
 
@@ -109,11 +123,11 @@ Vi lämnar ut uppgifter till myndigheter bara när lagen kräver det.
 
 Vår egen server drivs hos en molnleverantör inom EU: [leverantör och region läggs till].
 
-AI-leverantörerna i avsnitt 5 är amerikanska koncerner. Även när vårt avtal är med en leverantörs europeiska bolag kan det bolaget och dess koncernbolag behandla uppgifter i USA och andra länder. Sådana överföringar omfattas av Europeiska kommissionens standardavtalsklausuler eller, för amerikanska företag som är certifierade enligt det, av dataskyddsramen mellan EU och USA (EU-US Data Privacy Framework). Du kan be oss om en kopia av skyddsåtgärderna.
+AI-leverantörerna och leverantörerna av AI-verktyg i avsnitt 5 är amerikanska koncerner. Även när vårt avtal är med en leverantörs europeiska bolag kan det bolaget och dess koncernbolag behandla uppgifter i USA och andra länder. Sådana överföringar omfattas av Europeiska kommissionens standardavtalsklausuler eller, för amerikanska företag som är certifierade enligt det, av dataskyddsramen mellan EU och USA (EU-US Data Privacy Framework). Du kan be oss om en kopia av skyddsåtgärderna.
 
 ## 7. Hur länge vi sparar uppgifter
 
-Tiderna anges i avsnitt 3.3. När en tid har gått ut raderar vi uppgifterna. Om du ber oss radera dina uppgifter raderar vi din inslagshistorik, uppgifterna om dina förfrågningar och dina identifierare utan att vänta på att tiderna går ut.
+Tiderna anges i avsnitt 3.3. När en tid har gått ut raderar vi uppgifterna. Om du ber oss radera dina uppgifter raderar vi din inslagshistorik, uppgifterna om dina förfrågningar och dina identifierare utan att vänta på att tiderna går ut [och, när användningsstatistik finns, allt som är sparat under din analysidentifierare].
 
 AI-leverantörerna sparar det innehåll vi skickar till dem under en begränsad tid enligt sina egna villkor, för att upptäcka missbruk, och raderar det sedan. [Tiderna ska bekräftas mot de undertecknade avtalen.]
 
@@ -126,7 +140,8 @@ Du har rätt att:
 - få dina uppgifter raderade;
 - få vår användning av dina uppgifter begränsad;
 - få de uppgifter du har lämnat i ett portabelt format;
-- invända mot behandling som vi grundar på våra berättigade intressen.
+- invända mot behandling som vi grundar på våra berättigade intressen;
+- när som helst återkalla ett samtycke som du har gett. [När kraschrapporter och användningsstatistik finns: genom att slå av dem i Inställningar.]
 
 Eftersom du inte har något konto hos oss kan vi bara hitta dina uppgifter genom lyssnar-id:t i din app. Skriv till <privacy@fedor.nu>. [Läggs till när det är byggt: hur du raderar dina uppgifter från appens Inställningar och var appen visar din identifierare.] Vi svarar inom en månad.
 
