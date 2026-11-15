@@ -1,6 +1,6 @@
 ---
 title: Crosstalk — AI disclosure
-version: 0.3.0-draft
+version: 0.3.1-draft
 effective_date: TBD
 status: draft, not in force
 ---
@@ -63,9 +63,11 @@ A spoken notice at the start of a listening session is not part of the first rel
 Every host segment is also marked as AI-generated in two ways that software can read:
 
 - **A watermark in the sound itself.** The hosts' voices are produced by Google's Gemini speech models, and Google embeds its SynthID watermark in the audio they generate.
-- **A label in the audio file.** Crosstalk writes an "AI-generated" statement into the metadata of each audio file it delivers.
+- **A label in the audio file.** Crosstalk writes an "AI-generated" statement into the metadata of each audio file it delivers to the app. The app plays that file and does not hand it out.
 
-[To be confirmed before publication: the metadata label is implemented, and the watermark is still detectable after Crosstalk converts the audio to MP3.]
+**How to check a recording.** If you have a recording of a Crosstalk host segment, you can check it with Google's SynthID Detector (synthid.com). The detector is open to everyone and accepts audio files. It reports that the audio was made with Google's AI; it does not name Crosstalk.
+
+[To be confirmed by a test before publication; the paragraph above stays only if it is: the detector finds the watermark in the audio as Crosstalk delivers it (converted to MP3), in a segment of ordinary length, and in a recording of the segment.]
 
 ## Languages
 
