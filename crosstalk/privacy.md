@@ -1,6 +1,6 @@
 ---
 title: Crosstalk — Privacy policy
-version: 0.7.0-draft
+version: 0.8.0-draft
 effective_date: TBD
 status: draft, not in force
 ---
@@ -59,9 +59,9 @@ We do not receive your Apple Music library, your listening history beyond the tr
 | Segments you did not hear | The same record for a segment that was generated but never played. | 24 hours |
 | Audio of a segment | The generated audio, held so that the app can fetch it again if the connection drops. | 15 minutes |
 | Request records | Which requests were made, when, and whether they succeeded. They contain the listener identifier and no track details. | 30 days |
-| Your preferences for the hosts | What you set and wrote for the hosts. [To be confirmed: whether this is stored on our server or only sent with each request.] | [Retention period to be decided] |
-| Identifiers | The listener identifier and the app integrity key with Apple's proof for it. | [Retention period to be decided] |
-| Fault-finding capture | The complete text sent to the AI provider and its reply. [To be confirmed: switched off in normal operation and switched on only for a limited time to investigate a fault.] | 30 days |
+| Sessions and paging markers | The short-lived session token (section 3.2) and the markers the app uses to page through your host history. | Until they expire |
+| Identifiers | The listener identifier and the app integrity key with Apple's proof for it. | The app integrity key: 90 days after it was last used. The listener identifier: until nothing we store refers to it. |
+| Fault-finding capture | The complete text sent to the AI provider and its reply, including your preferences for the hosts. Switched off in normal operation; we switch it on only to investigate a fault. | 30 days |
 | Server and network logs | Technical records of requests and errors: time, address requested, result, your IP address, the app and system version your device reports, and the app integrity key reference. [To be confirmed on the production server: logs contain no track details and no text you wrote for the hosts.] | 14 days |
 
 [When the "Build your own show" feature is available: the description of the station and hosts that you write, the result of our automatic check of it, and the accepted world, which is stored on your device.]
@@ -70,7 +70,7 @@ We do not receive your Apple Music library, your listening history beyond the tr
 
 The app stores the following on your device and nowhere else:
 
-- your settings: your preferences for the hosts, the show and host language you chose, and how your library is sorted [to be confirmed: the preferences for the hosts may also be stored on our server, see section 3.3];
+- your settings: your preferences for the hosts, the show and host language you chose, and how your library is sorted. Your preferences for the hosts are sent with each request for a host segment (section 3.1) and are not stored on our server, except inside a fault-finding capture (section 3.3);
 - a list of up to 25 albums and playlists you opened recently, as references without titles;
 - a reference to the app integrity key;
 - the audio of a host segment while it plays, and, if a segment was interrupted, that audio together with the title, artist and album of the track that follows it, so that the segment can resume.
@@ -79,21 +79,21 @@ Deleting the app removes this data. [To be confirmed: except the listener identi
 
 ### 3.5 Crash reports and usage statistics
 
-[This section applies when these two features are available. Usage statistics are off until you switch them on. To be decided for crash reports: sent unless you switch them off in Settings, or sent only if you switch them on.]
+[This section applies when these two features are available. Usage statistics are off until you switch them on. Crash reports have their own switch in Settings, and Settings shows whether it is on.]
 
 **Crash reports.** After a crash or a freeze the app sends our server the technical report that iOS prepared: which part of the app's code was running (the stack trace), the app version and build, the device model and the iOS version. Before sending, the app removes the region, process numbers, memory addresses, the text of error messages and the exact time. We use a report only to find and fix the fault. The report carries no identifier. [To be confirmed on the production server: no log line ties a report to your IP address or to your app integrity key.] We keep a report for 90 days. You can switch crash reports off in Settings.
 
 **Usage statistics.** If you switch them on, the app sends our server a short list of events: when playback starts, how long it takes until you hear sound, when a host segment starts and ends, when you skip, when you switch the hosts on or off, and the steps from setup to purchase. Each event carries an analytics identifier, a random number that the app creates when you agree. [To be confirmed: the analytics identifier is not linked to your listener identifier or your host history.] We use the events to see how the app performs and to improve it. We also use the analytics identifier to give different listeners different versions of a feature and compare the results.
 
-The analytics identifier is kept in the keychain of your device. It stays there if you delete the app, and after you install the app again it is used only if you agree again. Switching usage statistics off removes it from your device and deletes the events stored under it on our server at once. Your purchase, your host history and your preferences for the hosts are not affected. We keep events for [30 to 90 days, to be decided], and we delete everything stored under an analytics identifier after 90 days without activity.
+The analytics identifier is kept in the keychain of your device. It stays there if you delete the app, and after you install the app again it is used only if you agree again. Switching usage statistics off removes it from your device and deletes the events stored under it on our server at once. Your purchase, your host history and your preferences for the hosts are not affected. We keep events for 90 days, and we delete everything stored under an analytics identifier after 90 days without activity.
 
 We run both on our own server. No outside analytics company receives this data.
 
 ## 4. Legal basis
 
 - **Performing our agreement with you** (GDPR Article 6(1)(b)). Checking your purchase, generating host segments, keeping your host history and giving the hosts continuity are what you ask Crosstalk to do under the [terms of use](terms).
-- **Our legitimate interests** (Article 6(1)(f)). We have an interest in keeping the service secure, preventing abuse and keeping the service working. This covers the app integrity check, limits on how often segments can be generated, logs, fault-finding, and the use of AI tools to monitor and repair the service (section 5). [If we count active installs: it also covers counting how many copies of the app were active in the last 30 days. We count the listener identifiers seen in that time and keep only the total.] [If crash reports are sent without asking first: it also covers finding and fixing faults from crash reports (section 3.5).] You can object to this processing; see section 8.
-- **Your consent** (Article 6(1)(a)). [When available:] usage statistics, and crash reports if the app asks you first (section 3.5). You can withdraw it at any time by switching them off in Settings. That does not affect what was done before.
+- **Our legitimate interests** (Article 6(1)(f)). We have an interest in keeping the service secure, preventing abuse and keeping the service working. This covers the app integrity check, limits on how often segments can be generated, logs, fault-finding, and the use of AI tools to monitor and repair the service (section 5). [If we count active installs: it also covers counting how many copies of the app were active in the last 30 days. We count the listener identifiers seen in that time and keep only the total.] [When crash reports are available: where the switch starts on, it also covers finding and fixing faults from crash reports (section 3.5).] You can object to this processing; see section 8.
+- **Your consent** (Article 6(1)(a)). [When available:] usage statistics, and crash reports where the switch starts off and you turn it on (section 3.5). You can withdraw it at any time by switching them off in Settings. That does not affect what was done before.
 
 Before the first host segment, the app asks you to allow sharing with AI services. The screen says in short what is shared and why, and this policy gives the details: the data in section 3.1 and the recipients in section 5. Your permission covers the AI providers that write and voice the hosts and the AI tools that help us run the service. Without that permission the hosts cannot work, and none of the data in section 3.1 is sent to our server or to any AI provider. You can change your choice at any time in Settings. Switching the hosts off stops new data from being sent. What is already stored stays for the periods in section 3.3 and can still be read by the AI tools in section 5; you can ask us to delete it (section 8).
 
@@ -108,7 +108,7 @@ We use other companies in four roles. Each of them is our processor: it acts on 
 | Script-writing AI | [Company to be added when the contract is signed. We expect to use one of Anthropic's Claude models, bought either from Anthropic or through a cloud provider.] | The text we assemble for the script: the track and playlist details, the time, your preferences for the hosts, the show's description, and the scripts of your most recent segments. No identifier of you is included. | Writing the hosts' script. |
 | Speech AI | Google [contracting company to be added when the contract is signed] | The finished script, the chosen voices and the language. No identifier of you is included. | Turning the script into speech. |
 | Hosting | [Cloud provider to be added] | Everything our server stores. | Running our server, in [EU region]. |
-| AI tools that help us operate the service | [Companies to be named here when they are chosen.] Providers of AI models and AI coding tools, which are American groups. We use them under business terms that make them our processors. | What a tool reads while it works: the database behind the service as it is. That is your host history, your preferences for the hosts and request records (section 3.3), stored under your listener identifier, and fault-finding captures. The database also holds the app integrity keys and session tokens from section 3.2, and a tool can read those too. [To be confirmed: whether those tables are closed to the tools.] We do not hold your name or your Apple Account, so a tool cannot see them. If you write personal details into free text for the hosts, a tool can read them. The tools are not given the server and network logs, which contain IP addresses. | Monitoring the service, finding and repairing faults, and maintaining it. |
+| AI tools that help us operate the service | [Companies to be named here when they are chosen.] Providers of AI models and AI coding tools, which are American groups. We use them under business terms that make them our processors. | What a tool reads while it works: the database behind the service as it is, except the tables that hold app integrity keys and session tokens, which are closed to the tools. That is your host history and request records (section 3.3), stored under your listener identifier. Your preferences for the hosts are not stored in the database. A fault-finding capture, when one is switched on, contains them, so a tool can then read personal details you wrote for the hosts. We do not hold your name or your Apple Account, so a tool cannot see them. The tools are not given the server and network logs, which contain IP addresses. | Monitoring the service, finding and repairing faults, and maintaining it. |
 
 Our contracts with the AI providers do not allow them to train their models on your data. [To be confirmed against each signed contract.]
 
