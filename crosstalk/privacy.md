@@ -1,6 +1,6 @@
 ---
 title: Crosstalk — Privacy policy
-version: 0.8.1-draft
+version: 0.9.0-draft
 effective_date: TBD
 status: draft, not in force
 ---
@@ -48,7 +48,7 @@ We do not receive your Apple Music library, your listening history beyond the tr
 | Listener identifier | A random identifier that the app creates and attaches to your App Store purchase of Crosstalk. It is not your name or your Apple Account. [To be confirmed when this part of the app is built: the identifier is kept in your iCloud Keychain, so your devices share it and it survives reinstalling the app.] | To keep your host history together and to give the hosts continuity from one segment to the next. |
 | App integrity key | Created by Apple's App Attest service on your device, together with the proof Apple issues for it. | To confirm that requests come from a genuine copy of the app, and to prevent abuse. |
 | Session token | A short-lived token, valid for at most 15 minutes. | To authorise requests. |
-| Purchase record | The signed App Store transaction record for your Crosstalk purchase. Our server reads from it the app identifier, the product, the expiry date, whether the purchase was refunded or revoked, and the listener identifier. It contains no name, no Apple Account and no payment details. We check the record and do not keep it. | To confirm that you are entitled to use the service. |
+| Purchase record | The signed App Store transaction record for your Crosstalk purchase. Our server reads from it the app identifier, the product, the expiry date, whether the purchase was refunded or revoked, and the listener identifier. [To be confirmed when crash reports are built: and the country of your App Store, which sets whether the crash-report switch starts on or off.] It contains no name, no Apple Account and no payment details. We check the record and do not keep it. | To confirm that you are entitled to use the service. |
 | Network address | Your IP address, as with any internet connection. | To deliver responses and to protect the service. |
 
 ### 3.3 Created and kept by us
@@ -79,7 +79,7 @@ Deleting the app removes this data. [To be confirmed: except the listener identi
 
 ### 3.5 Crash reports and usage statistics
 
-[This section applies when these two features are available. Usage statistics are off until you switch them on. Crash reports have their own switch in Settings, and Settings shows whether it is on.]
+[This section applies when these two features are available. Usage statistics are off until you switch them on. Crash reports have their own switch in Settings. It starts on or off depending on the country of your App Store, and Settings shows which.]
 
 **Crash reports.** After a crash or a freeze the app sends our server the technical report that iOS prepared: which part of the app's code was running (the stack trace), the app version and build, the device model and the iOS version. Before sending, the app removes the region, process numbers, memory addresses, the text of error messages and the exact time. We use a report only to find and fix the fault. The report carries no identifier. [To be confirmed on the production server: no log line ties a report to your IP address or to your app integrity key.] We keep a report for 90 days. You can switch crash reports off in Settings.
 
@@ -87,7 +87,7 @@ Deleting the app removes this data. [To be confirmed: except the listener identi
 
 The analytics identifier is kept in the keychain of your device. It stays there if you delete the app, and after you install the app again it is used only if you agree again. Switching usage statistics off removes it from your device and deletes the events stored under it on our server at once. Your purchase, your host history and your preferences for the hosts are not affected. We keep events for 90 days, and we delete everything stored under an analytics identifier after 90 days without activity.
 
-We run both on our own server. No outside analytics company receives this data. [To be confirmed: whether the AI tools in section 5 can read it.]
+We run both on our own server. No outside analytics company receives this data. The AI tools that help us run the service (section 5) can read it.
 
 ## 4. Legal basis
 
@@ -108,7 +108,7 @@ We use other companies in four roles. Each of them is our processor: it acts on 
 | Script-writing AI | [Company to be added when the contract is signed. We expect to use one of Anthropic's Claude models, bought either from Anthropic or through a cloud provider.] | The text we assemble for the script: the track and playlist details, the time, your preferences for the hosts, the show's description, and the scripts of your most recent segments. No identifier of you is included. | Writing the hosts' script. |
 | Speech AI | Google [contracting company to be added when the contract is signed] | The finished script, the chosen voices and the language. No identifier of you is included. | Turning the script into speech. |
 | Hosting | [Cloud provider to be added] | Everything our server stores. | Running our server, in [EU region]. |
-| AI tools that help us operate the service | [Companies to be named here when they are chosen.] Providers of AI models and AI coding tools, which are American groups. We use them under business terms that make them our processors. | What a tool reads while it works: the database behind the service as it is, except the tables that hold app integrity keys and session tokens, which are closed to the tools. That includes your host history, request records and paging markers (section 3.3), stored under your listener identifier. [To be confirmed: whether the tools can also read crash reports and usage-statistics events (section 3.5).] Your preferences for the hosts are not stored in the database. A fault-finding capture, when one is switched on, contains them, so a tool can then read personal details you wrote for the hosts. We do not hold your name or your Apple Account, so a tool cannot see them. The tools are not given the server and network logs, which contain IP addresses. | Monitoring the service, finding and repairing faults, and maintaining it. |
+| AI tools that help us operate the service | [Companies to be named here when they are chosen.] Providers of AI models and AI coding tools, which are American groups. We use them under business terms that make them our processors. | What a tool reads while it works: the database behind the service as it is, except the tables that hold app integrity keys and session tokens, which are closed to the tools. That includes your host history, request records and paging markers (section 3.3), stored under your listener identifier. [When crash reports and usage statistics are available: the tools can also read those reports and events (section 3.5).] Your preferences for the hosts are not stored in the database. A fault-finding capture, when one is switched on, contains them, so a tool can then read personal details you wrote for the hosts. We do not hold your name or your Apple Account, so a tool cannot see them. The tools are not given the server and network logs, which contain IP addresses. | Monitoring the service, finding and repairing faults, and maintaining it. |
 
 Our contracts with the AI providers do not allow them to train their models on your data. [To be confirmed against each signed contract.]
 
