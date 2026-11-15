@@ -1,12 +1,14 @@
 ---
 title: Crosstalk — Privacy policy
-version: 0.4.1-draft
+version: 0.5.0-draft
 effective_date: TBD
 status: draft, not in force
 ---
 # Crosstalk — Privacy policy
 
 > Draft for review. Not in force until Fedor AB publishes it with an effective date. Text in [square brackets] is waiting for a decision by Fedor AB.
+
+This policy is also available in Swedish: [Integritetspolicy](sv/privacy).
 
 ## 1. Who is responsible
 
@@ -20,7 +22,7 @@ Crosstalk is offered in countries of the European Union and the European Economi
 - To use Crosstalk you need a Crosstalk purchase in the App Store. Apple handles the payment, and we never see your payment details.
 - To write what the hosts say, the app sends our server the details of the tracks around your current position, your time zone and language, and any note you wrote to the hosts.
 - Our server passes that information to an AI provider that writes the script, and passes the script to an AI provider that turns it into speech. The app asks for your permission before this happens.
-- We use AI tools to help us run and repair the service. While they do that work, they can read the data our server holds.
+- We use AI tools to help us run and repair the service. While they do that work, they can read what our server keeps about your listening. They are not given the logs that contain your IP address or your identifiers.
 - We keep a history of the host segments you heard, tied to a random identifier and not to your name.
 - We do not use advertising, analytics or tracking tools, and we do not sell data.
 
@@ -79,7 +81,9 @@ Deleting the app removes this data. [To be confirmed: except the listener identi
 - **Performing our agreement with you** (GDPR Article 6(1)(b)). Checking your purchase, generating host segments, keeping your host history and giving the hosts continuity are what you ask Crosstalk to do under the [terms of use](terms).
 - **Our legitimate interests** (Article 6(1)(f)). We have an interest in keeping the service secure, preventing abuse and keeping the service working. This covers the app integrity check, limits on how often segments can be generated, logs, fault-finding, and the use of AI tools to monitor and repair the service (section 5). You can object to this processing; see section 8.
 
-Before the first host segment, the app asks you to confirm that the data in section 3.1 may be sent to the script-writing and speech AI providers in section 5. Without that confirmation the hosts cannot work, and none of that data is sent to our server or to the AI providers. The app still contacts our server when it starts, to check that your version is supported and that the app is genuine. That contact leaves the technical records listed under "Server and network logs" in section 3.3. [To be settled before publication: whether the AI tools in section 5 may read records made before you gave this permission.]
+Before the first host segment, the app asks you to allow two things: that the data in section 3.1 is sent to the AI providers that write and voice the hosts, and that the AI tools we use to run the service may read what our server keeps about your listening. The screen names the companies. Without that permission the hosts cannot work, and none of that data is sent to our server or to any AI provider.
+
+The app still contacts our server when it starts, to check that your version is supported and that the app is genuine. That contact leaves the technical records listed under "Server and network logs" in section 3.3. The AI tools in section 5 are not given those logs.
 
 ## 5. Who receives your data
 
@@ -90,7 +94,7 @@ We use other companies in four roles. Each of them is our processor: it acts on 
 | Script-writing AI | [Company to be added when the contract is signed. We expect to use one of Anthropic's Claude models, bought either from Anthropic or through a cloud provider.] | The text we assemble for the script: the track and playlist details, the time, your note, the show's description, and the scripts of your most recent segments. No identifier of you is included. | Writing the hosts' script. |
 | Speech AI | Google [contracting company to be added when the contract is signed] | The finished script, the chosen voices and the language. No identifier of you is included. | Turning the script into speech. |
 | Hosting | [Cloud provider to be added] | Everything our server stores. | Running our server, in [EU region]. |
-| AI tools that help us operate the service | Anthropic and OpenAI [contracting companies to be added when the contracts are confirmed] | Whatever a tool reads while it works. This can be anything in section 3.3, including your identifiers, your host history, logs with your IP address, and fault-finding captures. | Monitoring the service, finding and repairing faults, and maintaining it. |
+| AI tools that help us operate the service | Anthropic and OpenAI [contracting companies to be added when the contracts are signed] | What a tool reads while it works: the records our server keeps about your listening (section 3.3). The tools are not given the logs that contain IP addresses or the identifiers in section 3.2. [To be confirmed before publication: whether the tools can see the listener identifier that your host history and request records are stored under.] | Monitoring the service, finding and repairing faults, and maintaining it. |
 
 Our contracts with the AI providers do not allow them to train their models on your data. [To be confirmed against each signed contract.]
 
