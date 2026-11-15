@@ -1,7 +1,7 @@
 ---
 title: Crosstalk — Integritetspolicy
 lang: sv
-version: 0.8.0-draft
+version: 0.8.1-draft
 effective_date: TBD
 status: draft, not in force
 ---
@@ -88,7 +88,7 @@ När du raderar appen tas de här uppgifterna bort. [Ska bekräftas: utom lyssna
 
 Analysidentifieraren sparas i enhetens nyckelring. Den finns kvar där om du raderar appen, och när du har installerat appen igen används den bara om du samtycker på nytt. När du slår av användningsstatistiken tas den bort från din enhet och de händelser som är sparade under den på vår server raderas genast. Ditt köp, din inslagshistorik och dina önskemål för programledarna påverkas inte. Vi sparar händelser i 90 dagar, och vi raderar allt som är sparat under en analysidentifierare efter 90 dagar utan aktivitet.
 
-Vi driver båda på vår egen server. Inget analysföretag utanför oss tar emot de här uppgifterna.
+Vi driver båda på vår egen server. Inget analysföretag utanför oss tar emot de här uppgifterna. [Ska bekräftas: om AI-verktygen i avsnitt 5 kan läsa dem.]
 
 ## 4. Rättslig grund
 
@@ -109,7 +109,7 @@ Vi anlitar andra företag i fyra roller. Vart och ett av dem är vårt personupp
 | AI som skriver manus | [Företaget läggs till när avtalet är undertecknat. Vi räknar med att använda någon av Anthropics Claude-modeller, köpt antingen från Anthropic eller via en molnleverantör.] | Den text vi sätter samman för manuset: uppgifterna om låtar och spellista, tiden, dina önskemål för programledarna, programmets beskrivning och manusen till dina senaste inslag. Ingen identifierare för dig ingår. | Att skriva programledarnas manus. |
 | AI för tal | Google [avtalsparten läggs till när avtalet är undertecknat] | Det färdiga manuset, de valda rösterna och språket. Ingen identifierare för dig ingår. | Att göra om manuset till tal. |
 | Drift av servern | [Molnleverantören läggs till] | Allt som vår server lagrar. | Att driva vår server, i [EU-region]. |
-| AI-verktyg som hjälper oss att driva tjänsten | [Företagen namnges här när de är valda.] Leverantörer av AI-modeller och AI-verktyg för programmering, som är amerikanska koncerner. Vi använder dem enligt företagsvillkor som gör dem till våra personuppgiftsbiträden. | Det ett verktyg läser medan det arbetar: databasen bakom tjänsten som den är, utom de tabeller som innehåller appintegritetsnycklar och sessionstoken, som är stängda för verktygen. Det är din inslagshistorik och uppgifterna om förfrågningar (avsnitt 3.3), sparade under ditt lyssnar-id. Dina önskemål för programledarna sparas inte i databasen. Ett felsökningsunderlag, när ett sådant är påslaget, innehåller dem, och då kan ett verktyg läsa personliga uppgifter som du har skrivit till programledarna. Vi har inte ditt namn eller ditt Apple-konto, så ett verktyg kan inte se dem. Verktygen får inte del av server- och nätverksloggarna, som innehåller IP-adresser. | Att övervaka tjänsten, hitta och åtgärda fel och underhålla den. |
+| AI-verktyg som hjälper oss att driva tjänsten | [Företagen namnges här när de är valda.] Leverantörer av AI-modeller och AI-verktyg för programmering, som är amerikanska koncerner. Vi använder dem enligt företagsvillkor som gör dem till våra personuppgiftsbiträden. | Det ett verktyg läser medan det arbetar: databasen bakom tjänsten som den är, utom de tabeller som innehåller appintegritetsnycklar och sessionstoken, som är stängda för verktygen. Det omfattar din inslagshistorik, uppgifterna om förfrågningar och bläddringsmarkörerna (avsnitt 3.3), sparade under ditt lyssnar-id. [Ska bekräftas: om verktygen också kan läsa kraschrapporter och händelser i användningsstatistiken (avsnitt 3.5).] Dina önskemål för programledarna sparas inte i databasen. Ett felsökningsunderlag, när ett sådant är påslaget, innehåller dem, och då kan ett verktyg läsa personliga uppgifter som du har skrivit till programledarna. Vi har inte ditt namn eller ditt Apple-konto, så ett verktyg kan inte se dem. Verktygen får inte del av server- och nätverksloggarna, som innehåller IP-adresser. | Att övervaka tjänsten, hitta och åtgärda fel och underhålla den. |
 
 Våra avtal med AI-leverantörerna tillåter inte att de tränar sina modeller på dina uppgifter. [Ska bekräftas mot varje undertecknat avtal.]
 
