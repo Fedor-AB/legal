@@ -1,6 +1,6 @@
 ---
 title: Crosstalk — Privacy policy
-version: 0.10.0-draft
+version: 0.10.1-draft
 effective_date: TBD
 status: draft, not in force
 ---
@@ -126,7 +126,7 @@ The AI providers and the providers of AI tools in section 5 are American groups.
 
 ## 7. How long we keep data
 
-The periods are listed in section 3.3. When a period ends we delete the data. If you ask us to delete your data, we delete your host history, your request records and your identifiers without waiting for those periods to end [and, when usage statistics are available, everything stored under your analytics identifier].
+The periods are listed in section 3.3. When a period ends we delete the data. If you ask us to delete your data, we delete your host history, your request records and your identifiers without waiting for those periods to end [and, when usage statistics are available, your usage events].
 
 The AI providers keep the content we send them for a limited time under their own terms, to detect misuse, and then delete it. [Periods to be confirmed against the signed contracts.]
 
@@ -142,7 +142,7 @@ You have the right to:
 - object to processing that we base on our legitimate interests;
 - withdraw a consent you gave, at any time. [When usage statistics are available: by switching them off in Settings.]
 
-Because you have no account with us, we can only find your data through the listener identifier in your app. Write to <privacy@fedor.nu>. [To be added when built: how to delete your data from the app's Settings, and where the app shows your identifier.] We answer within one month.
+Because you have no account with us, we can only find your data through the listener identifier in your app. Write to <privacy@fedor.nu>. [When usage statistics are available: your usage events are stored under the analytics identifier, so send us that identifier as well. Without it we look for them by matching their times with your host history.] [To be added when built: how to delete your data from the app's Settings, and where the app shows your identifier.] We answer within one month.
 
 You can also complain to the Swedish Authority for Privacy Protection (Integritetsskyddsmyndigheten, IMY), <https://www.imy.se>, or to the data protection authority in the country where you live.
 

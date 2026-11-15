@@ -1,7 +1,7 @@
 ---
 title: Crosstalk — Integritetspolicy
 lang: sv
-version: 0.10.0-draft
+version: 0.10.1-draft
 effective_date: TBD
 status: draft, not in force
 ---
@@ -127,7 +127,7 @@ AI-leverantörerna och leverantörerna av AI-verktyg i avsnitt 5 är amerikanska
 
 ## 7. Hur länge vi sparar uppgifter
 
-Tiderna anges i avsnitt 3.3. När en tid har gått ut raderar vi uppgifterna. Om du ber oss radera dina uppgifter raderar vi din inslagshistorik, uppgifterna om dina förfrågningar och dina identifierare utan att vänta på att tiderna går ut [och, när användningsstatistik finns, allt som är sparat under din analysidentifierare].
+Tiderna anges i avsnitt 3.3. När en tid har gått ut raderar vi uppgifterna. Om du ber oss radera dina uppgifter raderar vi din inslagshistorik, uppgifterna om dina förfrågningar och dina identifierare utan att vänta på att tiderna går ut [och, när användningsstatistik finns, dina användningshändelser].
 
 AI-leverantörerna sparar det innehåll vi skickar till dem under en begränsad tid enligt sina egna villkor, för att upptäcka missbruk, och raderar det sedan. [Tiderna ska bekräftas mot de undertecknade avtalen.]
 
@@ -143,7 +143,7 @@ Du har rätt att:
 - invända mot behandling som vi grundar på våra berättigade intressen;
 - när som helst återkalla ett samtycke som du har gett. [När användningsstatistik finns: genom att slå av den i Inställningar.]
 
-Eftersom du inte har något konto hos oss kan vi bara hitta dina uppgifter genom lyssnar-id:t i din app. Skriv till <privacy@fedor.nu>. [Läggs till när det är byggt: hur du raderar dina uppgifter från appens Inställningar och var appen visar din identifierare.] Vi svarar inom en månad.
+Eftersom du inte har något konto hos oss kan vi bara hitta dina uppgifter genom lyssnar-id:t i din app. Skriv till <privacy@fedor.nu>. [När användningsstatistik finns: dina användningshändelser är sparade under analysidentifieraren, så skicka oss den identifieraren också. Utan den letar vi efter dem genom att jämföra deras tidpunkter med din inslagshistorik.] [Läggs till när det är byggt: hur du raderar dina uppgifter från appens Inställningar och var appen visar din identifierare.] Vi svarar inom en månad.
 
 Du kan också lämna in ett klagomål till Integritetsskyddsmyndigheten (IMY), <https://www.imy.se>, eller till dataskyddsmyndigheten i det land där du bor.
 
