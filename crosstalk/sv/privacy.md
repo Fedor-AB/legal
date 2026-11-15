@@ -1,7 +1,7 @@
 ---
 title: Crosstalk — Integritetspolicy
 lang: sv
-version: 0.6.0-draft
+version: 0.6.1-draft
 effective_date: TBD
 status: draft, not in force
 ---
@@ -80,7 +80,7 @@ När du raderar appen tas de här uppgifterna bort. [Ska bekräftas: utom lyssna
 
 ### 3.5 Kraschrapporter och användningsstatistik
 
-[Det här avsnittet gäller när de två funktionerna finns. Båda är avstängda tills du slår på dem, och var och en har sin egen omkopplare.]
+[Det här avsnittet gäller när de två funktionerna finns. Båda är avstängda tills du slår på dem. Ska bekräftas: var och en har sin egen omkopplare.]
 
 **Kraschrapporter.** Om du slår på dem skickar appen, efter en krasch eller en låsning, den tekniska rapport som iOS har tagit fram till vår server: vilken del av appens kod som kördes (stackspårningen), appens version och bygge, enhetsmodellen och iOS-versionen. Innan rapporten skickas tar appen bort region, processnummer, minnesadresser, texten i felmeddelanden och den exakta tiden. Rapporten innehåller ingen identifierare, och vi sparar inte den IP-adress som den kom från. Vi sparar en rapport i 90 dagar.
 
@@ -96,7 +96,7 @@ Vi driver båda på vår egen server. Inget analysföretag utanför oss tar emot
 - **Våra berättigade intressen** (artikel 6.1 f). Vi har ett intresse av att hålla tjänsten säker, förhindra missbruk och hålla tjänsten i gång. Det omfattar kontrollen av appens äkthet, gränser för hur ofta inslag kan skapas, loggar, felsökning och användningen av AI-verktyg för att övervaka och reparera tjänsten (avsnitt 5). [Om vi räknar aktiva installationer: det omfattar också att räkna hur många kopior av appen som har varit aktiva de senaste 30 dagarna. Vi räknar de lyssnar-id:n som har setts under den tiden och sparar bara summan.] Du kan invända mot den här behandlingen; se avsnitt 8.
 - **Ditt samtycke** (artikel 6.1 a). [När de finns:] kraschrapporter och användningsstatistik (avsnitt 3.5). Du kan när som helst återkalla samtycket genom att slå av dem i Inställningar. Det påverkar inte det som har gjorts dessförinnan.
 
-Före det första inslaget ber appen dig att tillåta delning med AI-tjänster. Skärmen säger kort vad som delas och varför, och den här policyn ger detaljerna: uppgifterna i avsnitt 3.1 och mottagarna i avsnitt 5. Din tillåtelse omfattar de AI-leverantörer som skriver och ger röst åt programledarna och de AI-verktyg som hjälper oss att driva tjänsten. Utan den tillåtelsen kan programledarna inte fungera, och inga av uppgifterna i avsnitt 3.1 skickas till vår server eller till någon AI-leverantör. Du kan när som helst ändra ditt val i Inställningar.
+Före det första inslaget ber appen dig att tillåta delning med AI-tjänster. Skärmen säger kort vad som delas och varför, och den här policyn ger detaljerna: uppgifterna i avsnitt 3.1 och mottagarna i avsnitt 5. [Ska bekräftas mot skärmens slutliga text: din tillåtelse omfattar de AI-leverantörer som skriver och ger röst åt programledarna och de AI-verktyg som hjälper oss att driva tjänsten.] Utan den tillåtelsen kan programledarna inte fungera, och inga av uppgifterna i avsnitt 3.1 skickas till vår server eller till någon AI-leverantör. Du kan när som helst ändra ditt val i Inställningar. När du slår av programledarna skickas inga nya uppgifter. Det som redan är sparat finns kvar under de tider som anges i avsnitt 3.3 och kan fortfarande läsas av AI-verktygen i avsnitt 5; du kan be oss radera det (avsnitt 8).
 
 Appen kontaktar ändå vår server när den startar, för att kontrollera att din version stöds och att appen är äkta. Den kontakten lämnar de tekniska uppgifter som anges under ”Server- och nätverksloggar” i avsnitt 3.3. AI-verktygen i avsnitt 5 får inte del av de loggarna.
 
@@ -109,7 +109,7 @@ Vi anlitar andra företag i fyra roller. Vart och ett av dem är vårt personupp
 | AI som skriver manus | [Företaget läggs till när avtalet är undertecknat. Vi räknar med att använda någon av Anthropics Claude-modeller, köpt antingen från Anthropic eller via en molnleverantör.] | Den text vi sätter samman för manuset: uppgifterna om låtar och spellista, tiden, dina önskemål för programledarna, programmets beskrivning och manusen till dina senaste inslag. Ingen identifierare för dig ingår. | Att skriva programledarnas manus. |
 | AI för tal | Google [avtalsparten läggs till när avtalet är undertecknat] | Det färdiga manuset, de valda rösterna och språket. Ingen identifierare för dig ingår. | Att göra om manuset till tal. |
 | Drift av servern | [Molnleverantören läggs till] | Allt som vår server lagrar. | Att driva vår server, i [EU-region]. |
-| AI-verktyg som hjälper oss att driva tjänsten | [Företagen namnges här när de är valda.] Leverantörer av AI-modeller och AI-verktyg för programmering, som är amerikanska koncerner. Vi använder dem enligt företagsvillkor som gör dem till våra personuppgiftsbiträden. | Det ett verktyg läser medan det arbetar: databasen bakom tjänsten som den är. Det är din inslagshistorik, dina önskemål för programledarna och uppgifterna om förfrågningar (avsnitt 3.3), sparade under ditt lyssnar-id, samt felsökningsunderlaget. Vi har inte ditt namn eller ditt Apple-konto, så ett verktyg kan inte se dem. Om du skriver personliga uppgifter i fritext till programledarna kan ett verktyg läsa dem. Verktygen får inte del av server- och nätverksloggarna, som innehåller IP-adresser. | Att övervaka tjänsten, hitta och åtgärda fel och underhålla den. |
+| AI-verktyg som hjälper oss att driva tjänsten | [Företagen namnges här när de är valda.] Leverantörer av AI-modeller och AI-verktyg för programmering, som är amerikanska koncerner. Vi använder dem enligt företagsvillkor som gör dem till våra personuppgiftsbiträden. | Det ett verktyg läser medan det arbetar: databasen bakom tjänsten som den är. Det är din inslagshistorik, dina önskemål för programledarna och uppgifterna om förfrågningar (avsnitt 3.3), sparade under ditt lyssnar-id, samt felsökningsunderlaget. Databasen innehåller också appintegritetsnycklarna och sessionstoken från avsnitt 3.2. [Ska bekräftas: tabellerna med de nycklarna och de token är stängda för verktygen.] Vi har inte ditt namn eller ditt Apple-konto, så ett verktyg kan inte se dem. Om du skriver personliga uppgifter i fritext till programledarna kan ett verktyg läsa dem. Verktygen får inte del av server- och nätverksloggarna, som innehåller IP-adresser. | Att övervaka tjänsten, hitta och åtgärda fel och underhålla den. |
 
 Våra avtal med AI-leverantörerna tillåter inte att de tränar sina modeller på dina uppgifter. [Ska bekräftas mot varje undertecknat avtal.]
 

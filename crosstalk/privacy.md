@@ -1,6 +1,6 @@
 ---
 title: Crosstalk — Privacy policy
-version: 0.6.0-draft
+version: 0.6.1-draft
 effective_date: TBD
 status: draft, not in force
 ---
@@ -79,7 +79,7 @@ Deleting the app removes this data. [To be confirmed: except the listener identi
 
 ### 3.5 Crash reports and usage statistics
 
-[This section applies when these two features are available. Both are off until you switch them on, and each has its own switch.]
+[This section applies when these two features are available. Both are off until you switch them on. To be confirmed: each has its own switch.]
 
 **Crash reports.** If you switch them on, then after a crash or a freeze the app sends our server the technical report that iOS prepared: which part of the app's code was running (the stack trace), the app version and build, the device model and the iOS version. Before sending, the app removes the region, process numbers, memory addresses, the text of error messages and the exact time. The report carries no identifier, and we do not keep the IP address it came from. We keep a report for 90 days.
 
@@ -95,7 +95,7 @@ We run both on our own server. No outside analytics company receives this data.
 - **Our legitimate interests** (Article 6(1)(f)). We have an interest in keeping the service secure, preventing abuse and keeping the service working. This covers the app integrity check, limits on how often segments can be generated, logs, fault-finding, and the use of AI tools to monitor and repair the service (section 5). [If we count active installs: it also covers counting how many copies of the app were active in the last 30 days. We count the listener identifiers seen in that time and keep only the total.] You can object to this processing; see section 8.
 - **Your consent** (Article 6(1)(a)). [When available:] crash reports and usage statistics (section 3.5). You can withdraw it at any time by switching them off in Settings. That does not affect what was done before.
 
-Before the first host segment, the app asks you to allow sharing with AI services. The screen says in short what is shared and why, and this policy gives the details: the data in section 3.1 and the recipients in section 5. Your permission covers the AI providers that write and voice the hosts and the AI tools that help us run the service. Without that permission the hosts cannot work, and none of the data in section 3.1 is sent to our server or to any AI provider. You can change your choice at any time in Settings.
+Before the first host segment, the app asks you to allow sharing with AI services. The screen says in short what is shared and why, and this policy gives the details: the data in section 3.1 and the recipients in section 5. [To be confirmed with the final text of the screen: your permission covers the AI providers that write and voice the hosts and the AI tools that help us run the service.] Without that permission the hosts cannot work, and none of the data in section 3.1 is sent to our server or to any AI provider. You can change your choice at any time in Settings. Switching the hosts off stops new data from being sent. What is already stored stays for the periods in section 3.3 and can still be read by the AI tools in section 5; you can ask us to delete it (section 8).
 
 The app still contacts our server when it starts, to check that your version is supported and that the app is genuine. That contact leaves the technical records listed under "Server and network logs" in section 3.3. The AI tools in section 5 are not given those logs.
 
@@ -108,7 +108,7 @@ We use other companies in four roles. Each of them is our processor: it acts on 
 | Script-writing AI | [Company to be added when the contract is signed. We expect to use one of Anthropic's Claude models, bought either from Anthropic or through a cloud provider.] | The text we assemble for the script: the track and playlist details, the time, your preferences for the hosts, the show's description, and the scripts of your most recent segments. No identifier of you is included. | Writing the hosts' script. |
 | Speech AI | Google [contracting company to be added when the contract is signed] | The finished script, the chosen voices and the language. No identifier of you is included. | Turning the script into speech. |
 | Hosting | [Cloud provider to be added] | Everything our server stores. | Running our server, in [EU region]. |
-| AI tools that help us operate the service | [Companies to be named here when they are chosen.] Providers of AI models and AI coding tools, which are American groups. We use them under business terms that make them our processors. | What a tool reads while it works: the database behind the service as it is. That is your host history, your preferences for the hosts and request records (section 3.3), stored under your listener identifier, and fault-finding captures. We do not hold your name or your Apple Account, so a tool cannot see them. If you write personal details into free text for the hosts, a tool can read them. The tools are not given the server and network logs, which contain IP addresses. | Monitoring the service, finding and repairing faults, and maintaining it. |
+| AI tools that help us operate the service | [Companies to be named here when they are chosen.] Providers of AI models and AI coding tools, which are American groups. We use them under business terms that make them our processors. | What a tool reads while it works: the database behind the service as it is. That is your host history, your preferences for the hosts and request records (section 3.3), stored under your listener identifier, and fault-finding captures. The database also holds the app integrity keys and session tokens from section 3.2. [To be confirmed: the tables with those keys and tokens are closed to the tools.] We do not hold your name or your Apple Account, so a tool cannot see them. If you write personal details into free text for the hosts, a tool can read them. The tools are not given the server and network logs, which contain IP addresses. | Monitoring the service, finding and repairing faults, and maintaining it. |
 
 Our contracts with the AI providers do not allow them to train their models on your data. [To be confirmed against each signed contract.]
 
