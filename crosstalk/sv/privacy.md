@@ -1,7 +1,7 @@
 ---
 title: Crosstalk — Integritetspolicy
 lang: sv
-version: 0.9.0-draft
+version: 0.10.0-draft
 effective_date: TBD
 status: draft, not in force
 ---
@@ -49,7 +49,7 @@ Vi får inte ditt Apple Music-bibliotek, din lyssningshistorik utöver låtarna 
 | Lyssnar-id | En slumpmässig identifierare som appen skapar och knyter till ditt köp av Crosstalk i App Store. Den är inte ditt namn eller ditt Apple-konto. [Bekräftas när den här delen av appen är byggd: identifieraren sparas i din iCloud-nyckelring, så att dina enheter delar den och den finns kvar när appen installeras om.] | För att hålla ihop din inslagshistorik och ge programledarna en röd tråd från ett inslag till nästa. |
 | Appintegritetsnyckel | Skapas på din enhet av Apples tjänst App Attest, tillsammans med det intyg som Apple utfärdar för den. | För att bekräfta att förfrågningar kommer från en äkta kopia av appen och för att förhindra missbruk. |
 | Sessionstoken | En kortlivad token som gäller i högst 15 minuter. | För att godkänna förfrågningar. |
-| Köpuppgift | Den signerade transaktionsuppgiften från App Store för ditt Crosstalk-köp. Vår server läser ur den appens identifierare, produkten, utgångsdatumet, om köpet har återbetalats eller återkallats samt lyssnar-id:t. [Ska bekräftas när kraschrapporterna är byggda: och landet för din App Store, som avgör om omkopplaren för kraschrapporter är påslagen eller avstängd från början.] Den innehåller inget namn, inget Apple-konto och inga betalningsuppgifter. Vi kontrollerar uppgiften och sparar den inte. | För att bekräfta att du har rätt att använda tjänsten. |
+| Köpuppgift | Den signerade transaktionsuppgiften från App Store för ditt Crosstalk-köp. Vår server läser ur den appens identifierare, produkten, utgångsdatumet, om köpet har återbetalats eller återkallats samt lyssnar-id:t. Den innehåller inget namn, inget Apple-konto och inga betalningsuppgifter. Vi kontrollerar uppgiften och sparar den inte. | För att bekräfta att du har rätt att använda tjänsten. |
 | Nätverksadress | Din IP-adress, som vid all internetkommunikation. | För att leverera svar och skydda tjänsten. |
 
 ### 3.3 Skapas och sparas av oss
@@ -80,11 +80,11 @@ När du raderar appen tas de här uppgifterna bort. [Ska bekräftas: utom lyssna
 
 ### 3.5 Kraschrapporter och användningsstatistik
 
-[Det här avsnittet gäller när de två funktionerna finns. Användningsstatistiken är avstängd tills du slår på den. Kraschrapporter har en egen omkopplare i Inställningar. Den är påslagen eller avstängd från början beroende på landet för din App Store, och Inställningar visar vilket.]
+[Det här avsnittet gäller när de två funktionerna finns. Användningsstatistiken är avstängd tills du slår på den. Kraschrapporter har en egen omkopplare i Inställningar. Den är påslagen eller avstängd från början beroende på landet för din App Store, och Inställningar visar vilket. Appen läser det landet på din enhet och skickar det inte till oss.]
 
 **Kraschrapporter.** Efter en krasch eller en låsning skickar appen den tekniska rapport som iOS har tagit fram till vår server: vilken del av appens kod som kördes (stackspårningen), appens version och bygge, enhetsmodellen och iOS-versionen. Innan rapporten skickas tar appen bort region, processnummer, minnesadresser, texten i felmeddelanden och den exakta tiden. Vi använder en rapport bara för att hitta och åtgärda felet. Rapporten innehåller ingen identifierare. [Ska bekräftas på produktionsservern: ingen loggrad kopplar en rapport till din IP-adress eller till din appintegritetsnyckel.] Vi sparar en rapport i 90 dagar. Du kan slå av kraschrapporter i Inställningar.
 
-**Användningsstatistik.** Om du slår på den skickar appen en kort lista med händelser till vår server: när uppspelningen startar, hur lång tid det tar innan du hör ljud, när ett inslag börjar och slutar, när du hoppar över, när du slår på eller av programledarna och stegen från att du kommer i gång till köpet. Varje händelse innehåller en analysidentifierare, ett slumpmässigt nummer som appen skapar när du samtycker. [Ska bekräftas: analysidentifieraren är inte kopplad till ditt lyssnar-id eller din inslagshistorik.] Vi använder händelserna för att se hur appen fungerar och för att förbättra den. Vi använder också analysidentifieraren för att ge olika lyssnare olika versioner av en funktion och jämföra resultaten.
+**Användningsstatistik.** Om du slår på den skickar appen en kort lista med händelser till vår server: när uppspelningen startar, hur lång tid det tar innan du hör ljud, när ett inslag börjar och slutar, när du hoppar över, när du slår på eller av programledarna och stegen från att du kommer i gång till köpet. Varje händelse innehåller en analysidentifierare, ett slumpmässigt nummer som appen skapar när du samtycker. Analysidentifieraren är ett annat nummer än ditt lyssnar-id, men de två kan kopplas ihop: händelser som att ett inslag börjar och slutar innehåller tidpunkten, och din inslagshistorik visar när varje inslag sändes. Den som läser båda, också AI-verktygen i avsnitt 5, kan para ihop dem med hjälp av tiden. Vi använder händelserna för att se hur appen fungerar och för att förbättra den. Vi använder också analysidentifieraren för att ge olika lyssnare olika versioner av en funktion och jämföra resultaten.
 
 Analysidentifieraren sparas i enhetens nyckelring. Den finns kvar där om du raderar appen, och när du har installerat appen igen används den bara om du samtycker på nytt. När du slår av användningsstatistiken tas den bort från din enhet och de händelser som är sparade under den på vår server raderas genast. Ditt köp, din inslagshistorik och dina önskemål för programledarna påverkas inte. Vi sparar händelser i 90 dagar, och vi raderar allt som är sparat under en analysidentifierare efter 90 dagar utan aktivitet.
 

@@ -1,6 +1,6 @@
 ---
 title: Crosstalk — Privacy policy
-version: 0.9.0-draft
+version: 0.10.0-draft
 effective_date: TBD
 status: draft, not in force
 ---
@@ -48,7 +48,7 @@ We do not receive your Apple Music library, your listening history beyond the tr
 | Listener identifier | A random identifier that the app creates and attaches to your App Store purchase of Crosstalk. It is not your name or your Apple Account. [To be confirmed when this part of the app is built: the identifier is kept in your iCloud Keychain, so your devices share it and it survives reinstalling the app.] | To keep your host history together and to give the hosts continuity from one segment to the next. |
 | App integrity key | Created by Apple's App Attest service on your device, together with the proof Apple issues for it. | To confirm that requests come from a genuine copy of the app, and to prevent abuse. |
 | Session token | A short-lived token, valid for at most 15 minutes. | To authorise requests. |
-| Purchase record | The signed App Store transaction record for your Crosstalk purchase. Our server reads from it the app identifier, the product, the expiry date, whether the purchase was refunded or revoked, and the listener identifier. [To be confirmed when crash reports are built: and the country of your App Store, which sets whether the crash-report switch starts on or off.] It contains no name, no Apple Account and no payment details. We check the record and do not keep it. | To confirm that you are entitled to use the service. |
+| Purchase record | The signed App Store transaction record for your Crosstalk purchase. Our server reads from it the app identifier, the product, the expiry date, whether the purchase was refunded or revoked, and the listener identifier. It contains no name, no Apple Account and no payment details. We check the record and do not keep it. | To confirm that you are entitled to use the service. |
 | Network address | Your IP address, as with any internet connection. | To deliver responses and to protect the service. |
 
 ### 3.3 Created and kept by us
@@ -79,11 +79,11 @@ Deleting the app removes this data. [To be confirmed: except the listener identi
 
 ### 3.5 Crash reports and usage statistics
 
-[This section applies when these two features are available. Usage statistics are off until you switch them on. Crash reports have their own switch in Settings. It starts on or off depending on the country of your App Store, and Settings shows which.]
+[This section applies when these two features are available. Usage statistics are off until you switch them on. Crash reports have their own switch in Settings. It starts on or off depending on the country of your App Store, and Settings shows which. The app reads that country on your device and does not send it to us.]
 
 **Crash reports.** After a crash or a freeze the app sends our server the technical report that iOS prepared: which part of the app's code was running (the stack trace), the app version and build, the device model and the iOS version. Before sending, the app removes the region, process numbers, memory addresses, the text of error messages and the exact time. We use a report only to find and fix the fault. The report carries no identifier. [To be confirmed on the production server: no log line ties a report to your IP address or to your app integrity key.] We keep a report for 90 days. You can switch crash reports off in Settings.
 
-**Usage statistics.** If you switch them on, the app sends our server a short list of events: when playback starts, how long it takes until you hear sound, when a host segment starts and ends, when you skip, when you switch the hosts on or off, and the steps from setup to purchase. Each event carries an analytics identifier, a random number that the app creates when you agree. [To be confirmed: the analytics identifier is not linked to your listener identifier or your host history.] We use the events to see how the app performs and to improve it. We also use the analytics identifier to give different listeners different versions of a feature and compare the results.
+**Usage statistics.** If you switch them on, the app sends our server a short list of events: when playback starts, how long it takes until you hear sound, when a host segment starts and ends, when you skip, when you switch the hosts on or off, and the steps from setup to purchase. Each event carries an analytics identifier, a random number that the app creates when you agree. The analytics identifier is a different number from your listener identifier, but the two can be linked: events such as the start and end of a host segment carry the time, and your host history records when each segment aired. Anyone who reads both, including the AI tools in section 5, can match them by time. We use the events to see how the app performs and to improve it. We also use the analytics identifier to give different listeners different versions of a feature and compare the results.
 
 The analytics identifier is kept in the keychain of your device. It stays there if you delete the app, and after you install the app again it is used only if you agree again. Switching usage statistics off removes it from your device and deletes the events stored under it on our server at once. Your purchase, your host history and your preferences for the hosts are not affected. We keep events for 90 days, and we delete everything stored under an analytics identifier after 90 days without activity.
 
