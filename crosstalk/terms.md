@@ -1,6 +1,6 @@
 ---
 title: Crosstalk — Terms of use
-version: 0.5.0-draft
+version: 0.6.0-draft
 effective_date: TBD
 status: draft, not in force
 ---
@@ -19,6 +19,8 @@ These terms cover your use of the Crosstalk app and the service behind it. By us
 You get the app from Apple's App Store. The licence to install and run the app on your device is Apple's standard Licensed Application End User License Agreement ("Apple's standard EULA"), which you can read at <https://www.apple.com/legal/internet-services/itunes/dev/stdeula/>. We do not replace it.
 
 These terms do not change that licence. They add rules for the Crosstalk service: the AI hosts, the shows, and what you may put into them. Apple's standard EULA governs your licence to the app, and these terms govern your use of the service.
+
+All rights in the Crosstalk service, its software, the hosts and shows that we provide, the texts and the design belong to Fedor AB or to those who license them to us. These terms let you use Crosstalk. They do not transfer any of these rights to you. Section 9 says what you may do with host segments.
 
 These terms are between you and Fedor AB only. Apple is not a party to them. Fedor AB, not Apple, is responsible for Crosstalk and its content, and for any support.
 
@@ -109,6 +111,8 @@ You must not:
 - reverse engineer Crosstalk or the AI systems behind it, try to extract their instructions or models, or use Crosstalk to build or train another AI system;
 - overload or abuse the service, for example with automated or repeated requests;
 - use Crosstalk to harm others or to break the law.
+
+Nothing in this section limits what mandatory law lets you do with software whatever a contract says.
 
 ## 11. Purchase and price
 
