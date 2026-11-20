@@ -1,7 +1,7 @@
 ---
 title: Crosstalk — Integritetspolicy
 lang: sv
-version: 0.10.1-draft
+version: 0.11.0-draft
 effective_date: TBD
 status: draft, not in force
 ---
@@ -25,7 +25,7 @@ Crosstalk erbjuds i länder inom Europeiska unionen och Europeiska ekonomiska sa
 - Vår server skickar den informationen vidare till en AI-leverantör som skriver manuset, och skickar manuset till en AI-leverantör som gör om det till tal. Appen ber om din tillåtelse innan det sker.
 - Vi använder AI-verktyg från andra företag som hjälper oss att driva och reparera tjänsten. När de gör det arbetet kan de läsa det som vår databas innehåller om ditt lyssnande, sparat under en slumpmässig identifierare. De får inte del av de loggar som innehåller din IP-adress.
 - Vi sparar en historik över de inslag med programledarna som du har hört. Den är knuten till en slumpmässig identifierare och inte till ditt namn.
-- Vi använder inga verktyg för reklam eller spårning, vi använder inga analystjänster från andra företag och vi säljer inga uppgifter. [När kraschrapporter och användningsstatistik finns: vi samlar in dem själva, på vår egen server (avsnitt 3.5). Användningsstatistik samlas bara in om du slår på den.]
+- Vi använder inga verktyg för reklam eller spårning, vi använder inga analystjänster från andra företag och vi säljer inga uppgifter. Efter en krasch kan appen skicka oss en teknisk rapport som inte innehåller någon identifierare för dig; om den gör det beror på ditt land och ditt val (avsnitt 3.5). [När användningsstatistik finns: vi samlar in den själva, på vår egen server, och bara om du slår på den (avsnitt 3.5).]
 
 ## 3. Vad vi behandlar och varför
 
@@ -63,6 +63,7 @@ Vi får inte ditt Apple Music-bibliotek, din lyssningshistorik utöver låtarna 
 | Sessioner och bläddringsmarkörer | Den kortlivade sessionstoken (avsnitt 3.2) och de markörer som appen använder för att bläddra i din inslagshistorik. | Tills de går ut |
 | Identifierare | Lyssnar-id:t och appintegritetsnyckeln med Apples intyg för den. | Appintegritetsnyckeln: 90 dagar efter att den senast användes. Lyssnar-id:t: tills inget som vi sparar hänvisar till det. |
 | Felsökningsunderlag | Hela den text som skickades till AI-leverantören och dess svar, inklusive dina önskemål för programledarna. Avstängt i normal drift; vi slår på det bara för att utreda ett fel. | 30 dagar |
+| Kraschrapporter | Tekniska rapporter om en krasch eller en låsning, utan identifierare för dig (avsnitt 3.5). | 90 dagar |
 | Server- och nätverksloggar | Tekniska uppgifter om förfrågningar och fel: tid, begärd adress, resultat, din IP-adress, den app- och systemversion som din enhet uppger samt en hänvisning till appintegritetsnyckeln. [Ska bekräftas på produktionsservern: loggarna innehåller inga uppgifter om låtar och ingen text som du har skrivit till programledarna.] | 14 dagar |
 
 [När funktionen ”Build your own show” finns: den beskrivning av stationen och programledarna som du skriver, resultatet av vår automatiska kontroll av den och den godkända världen, som sparas på din enhet.]
@@ -74,27 +75,56 @@ Appen sparar följande på din enhet och ingen annanstans:
 - dina inställningar: dina önskemål för programledarna, det program- och programledarspråk du har valt och hur ditt bibliotek är sorterat. Dina önskemål för programledarna skickas med varje begäran om ett inslag (avsnitt 3.1) och sparas inte på vår server, utom i ett felsökningsunderlag (avsnitt 3.3);
 - en lista över upp till 25 album och spellistor som du nyligen har öppnat, som hänvisningar utan titlar;
 - en hänvisning till appintegritetsnyckeln;
+- ditt val om kraschrapporter och, om du har tryckt på ”Not now” när appen frågade, datumen för de svaren;
+- en kraschrapport som väntar på ditt svar eller på att skickas (avsnitt 3.5), i högst 14 dagar;
 - ljudet till ett inslag medan det spelas och, om ett inslag avbröts, det ljudet tillsammans med titel, artist och album för låten som följer efter det, så att inslaget kan fortsätta.
 
 När du raderar appen tas de här uppgifterna bort. [Ska bekräftas: utom lyssnar-id:t, om det sparas i din iCloud-nyckelring.] [När användningsstatistik finns: och utom analysidentifieraren, se avsnitt 3.5.]
 
 ### 3.5 Kraschrapporter och användningsstatistik
 
-[Det här avsnittet gäller när de två funktionerna finns. Användningsstatistiken är avstängd tills du slår på den. Kraschrapporter har en egen omkopplare i Inställningar. Den är påslagen eller avstängd från början beroende på landet för din App Store, och Inställningar visar vilket. Appen läser det landet på din enhet och skickar det inte till oss.]
+[Användningsstatistik finns inte ännu. Det som avsnittet säger om den gäller när den finns; den är avstängd tills du slår på den.]
 
-**Kraschrapporter.** Efter en krasch eller en låsning skickar appen den tekniska rapport som iOS har tagit fram till vår server: vilken del av appens kod som kördes (stackspårningen), appens version och bygge, enhetsmodellen och iOS-versionen. Innan rapporten skickas tar appen bort region, processnummer, minnesadresser, texten i felmeddelanden och den exakta tiden. Vi använder en rapport bara för att hitta och åtgärda felet. Rapporten innehåller ingen identifierare. [Ska bekräftas på produktionsservern: ingen loggrad kopplar en rapport till din IP-adress eller till din appintegritetsnyckel.] Vi sparar en rapport i 90 dagar. Du kan slå av kraschrapporter i Inställningar.
+**Kraschrapporter.** Efter en krasch eller en låsning tar iOS fram en teknisk rapport och lämnar den till appen nästa gång appen startar. Appen kopierar följande ur den och utelämnar allt annat, bland annat region, processnummer, minnesadresser, texten i felmeddelanden och klockslaget:
+
+- vilken del av koden som kördes: för varje steg den komponent som steget hör till och positionen i den (stackspårningen);
+- vilket slags fel det var: de numeriska koder som iOS anger för en krasch, namnet på feltypen om den finns i en fast lista, eller hur länge appen var låst;
+- appens identifierare och byggnummer, iOS-versionen och dess bygge, enhetsmodellen och processortypen samt om appen installerades via TestFlight;
+- vilken dag felet inträffade, utan klockslag;
+- ett slumpmässigt nummer som skapas för just den rapporten, så att vi inte sparar samma rapport två gånger. Det är nytt för varje rapport och identifierar varken dig eller din enhet;
+- vilken version av texterna om kraschrapporter som appen visade, och hur rapporteringen kom att vara påslagen: från början, genom din omkopplare i Inställningar eller genom ditt svar på frågan efter en krasch.
+
+Rapporten innehåller ingen identifierare för dig: inget lyssnar-id, ingen enhetsidentifierare och inget konto. Vår server registrerar vilken dag den tog emot rapporten, inte klockslaget. [Ska bekräftas på produktionsservern: ingen loggrad kopplar en rapport till din IP-adress eller till din appintegritetsnyckel.] Vi använder en rapport bara för att hitta och åtgärda felet, och vi raderar den efter 90 dagar. Vi kan inte hitta, lämna ut eller radera de rapporter som kom från dig, eftersom inget i dem pekar på dig.
+
+Om rapporter skickas beror på landet för din App Store och på ditt val. Appen läser det landet på din enhet och skickar det inte till oss; vår server ger alla kopior av appen samma tabell över utgångslägen. I den här versionen gäller:
+
+| Landet för din App Store | Vad som händer |
+|---|---|
+| Estland, Finland, Irland, Nederländerna, Sverige | Rapporter skickas om du inte slår av dem. |
+| Cypern, Luxemburg, Malta, Slovakien, Ungern | Inget skickas om du inte samtycker. Efter en krasch eller en låsning frågar appen dig när rapporten är klar. |
+| Alla andra länder | Inget skickas om du inte slår på rapporter i Inställningar. Appen frågar inte. |
+
+Så länge appen inte känner till landet eller inte har fått tabellen skickas ingenting. Om listan ändras uppdaterar vi den här policyn.
+
+**Frågan efter en krasch.** I länderna på den andra raden väntar rapporten på din enhet tills du svarar, dock högst 14 dagar. ”Send reports” slår på Share Crash Reports i Inställningar och skickar den rapport som väntar; senare rapporter skickas utan att appen frågar. ”Not now” raderar den rapport som väntar, och ingenting skickas. Efter ”Not now” kan appen fråga igen efter en senare krasch: på Cypern, i Luxemburg, på Malta och i Ungern en gång till, och inte fler gånger efter ett andra ”Not now”; i Slovakien tidigast 12 månader senare. Appen frågar bara medan omkopplaren är avstängd, och aldrig om du själv har slagit av rapporter i Inställningar. Frågan, raden under omkopplaren och sidan ”About Crash Reports…” visas på engelska.
+
+Du kan när som helst slå på eller av kraschrapporter med Share Crash Reports i Inställningar. När du har slagit av dem skickas inget mer.
+
+De AI-verktyg som hjälper oss att driva tjänsten (avsnitt 5) kan läsa rapporterna.
+
+**Kraschrapporter från Apple.** Oberoende av detta samlar Apple in kraschrapporter från dem som i iOS har valt att dela analysdata med apputvecklare (Inställningar > Integritet och säkerhet > Analys och förbättringar > Dela med apputvecklare) och visar dem för oss i en form som inte identifierar någon. Apple samlar in dem enligt sin egen integritetspolicy, och vår omkopplare påverkar dem inte.
 
 **Användningsstatistik.** Om du slår på den skickar appen en kort lista med händelser till vår server: när uppspelningen startar, hur lång tid det tar innan du hör ljud, när ett inslag börjar och slutar, när du hoppar över, när du slår på eller av programledarna och stegen från att du kommer i gång till köpet. Varje händelse innehåller en analysidentifierare, ett slumpmässigt nummer som appen skapar när du samtycker. Analysidentifieraren är ett annat nummer än ditt lyssnar-id, men de två kan kopplas ihop: händelser som att ett inslag börjar och slutar innehåller tidpunkten, och din inslagshistorik visar när varje inslag sändes. Den som läser båda, också AI-verktygen i avsnitt 5, kan para ihop dem med hjälp av tiden. Vi använder händelserna för att se hur appen fungerar och för att förbättra den. Vi använder också analysidentifieraren för att ge olika lyssnare olika versioner av en funktion och jämföra resultaten.
 
 Analysidentifieraren sparas i enhetens nyckelring. Den finns kvar där om du raderar appen, och när du har installerat appen igen används den bara om du samtycker på nytt. När du slår av användningsstatistiken tas den bort från din enhet och de händelser som är sparade under den på vår server raderas genast. Ditt köp, din inslagshistorik och dina önskemål för programledarna påverkas inte. Vi sparar händelser i 90 dagar, och vi raderar allt som är sparat under en analysidentifierare efter 90 dagar utan aktivitet.
 
-Vi driver båda på vår egen server. Inget analysföretag utanför oss tar emot de här uppgifterna. De AI-verktyg som hjälper oss att driva tjänsten (avsnitt 5) kan läsa dem.
+Vi sparar kraschrapporter och användningsstatistik på vår egen server. Inget företag utanför oss som arbetar med kraschrapportering eller analys tar emot dem. De AI-verktyg som hjälper oss att driva tjänsten (avsnitt 5) kan läsa dem.
 
 ## 4. Rättslig grund
 
 - **Fullgöra vårt avtal med dig** (artikel 6.1 b i dataskyddsförordningen). Att kontrollera ditt köp, skapa inslag, spara din inslagshistorik och ge programledarna en röd tråd är det du ber Crosstalk att göra enligt [användarvillkoren](../terms) (på engelska).
-- **Våra berättigade intressen** (artikel 6.1 f). Vi har ett intresse av att hålla tjänsten säker, förhindra missbruk och hålla tjänsten i gång. Det omfattar kontrollen av appens äkthet, gränser för hur ofta inslag kan skapas, loggar, felsökning och användningen av AI-verktyg för att övervaka och reparera tjänsten (avsnitt 5). [Om vi räknar aktiva installationer: det omfattar också att räkna hur många kopior av appen som har varit aktiva de senaste 30 dagarna. Vi räknar de lyssnar-id:n som har setts under den tiden och sparar bara summan.] [När kraschrapporter finns: där omkopplaren är påslagen från början omfattar det också att hitta och åtgärda fel med hjälp av kraschrapporter (avsnitt 3.5).] Du kan invända mot den här behandlingen; se avsnitt 8.
-- **Ditt samtycke** (artikel 6.1 a). [När de finns:] användningsstatistik, och kraschrapporter där omkopplaren är avstängd från början och du slår på den (avsnitt 3.5). Du kan när som helst återkalla samtycket genom att slå av dem i Inställningar. Det påverkar inte det som har gjorts dessförinnan.
+- **Våra berättigade intressen** (artikel 6.1 f). Vi har ett intresse av att hålla tjänsten säker, förhindra missbruk och hålla tjänsten i gång. Det omfattar kontrollen av appens äkthet, gränser för hur ofta inslag kan skapas, loggar, felsökning och användningen av AI-verktyg för att övervaka och reparera tjänsten (avsnitt 5). [Om vi räknar aktiva installationer: det omfattar också att räkna hur många kopior av appen som har varit aktiva de senaste 30 dagarna. Vi räknar de lyssnar-id:n som har setts under den tiden och sparar bara summan.] Där kraschrapporter skickas om du inte slår av dem omfattar det också att hitta och åtgärda fel med hjälp av de rapporterna (avsnitt 3.5). Du kan invända mot den här behandlingen; se avsnitt 8.
+- **Ditt samtycke** (artikel 6.1 a). Kraschrapporter, där de skickas bara därför att du har slagit på dem i Inställningar eller tryckt på ”Send reports” (avsnitt 3.5). [När användningsstatistik finns: också användningsstatistik.] Du kan när som helst återkalla samtycket genom att slå av dem i Inställningar. Det påverkar inte det som har gjorts dessförinnan.
 
 Före det första inslaget ber appen dig att tillåta delning med AI-tjänster. Skärmen säger kort vad som delas och varför, och den här policyn ger detaljerna: uppgifterna i avsnitt 3.1 och mottagarna i avsnitt 5. Din tillåtelse omfattar de AI-leverantörer som skriver och ger röst åt programledarna och de AI-verktyg som hjälper oss att driva tjänsten. Utan den tillåtelsen kan programledarna inte fungera, och inga av uppgifterna i avsnitt 3.1 skickas till vår server eller till någon AI-leverantör. Du kan när som helst ändra ditt val i Inställningar. När du slår av programledarna skickas inga nya uppgifter. Det som redan är sparat finns kvar under de tider som anges i avsnitt 3.3 och kan fortfarande läsas av AI-verktygen i avsnitt 5; du kan be oss radera det (avsnitt 8).
 
@@ -109,7 +139,7 @@ Vi anlitar andra företag i fyra roller. Vart och ett av dem är vårt personupp
 | AI som skriver manus | [Företaget läggs till när avtalet är undertecknat. Vi räknar med att använda någon av Anthropics Claude-modeller, köpt antingen från Anthropic eller via en molnleverantör.] | Den text vi sätter samman för manuset: uppgifterna om låtar och spellista, tiden, dina önskemål för programledarna, programmets beskrivning och manusen till dina senaste inslag. Ingen identifierare för dig ingår. | Att skriva programledarnas manus. |
 | AI för tal | Google [avtalsparten läggs till när avtalet är undertecknat] | Det färdiga manuset, de valda rösterna och språket. Ingen identifierare för dig ingår. | Att göra om manuset till tal. |
 | Drift av servern | [Molnleverantören läggs till] | Allt som vår server lagrar. | Att driva vår server, i [EU-region]. |
-| AI-verktyg som hjälper oss att driva tjänsten | [Företagen namnges här när de är valda.] Leverantörer av AI-modeller och AI-verktyg för programmering, som är amerikanska koncerner. Vi använder dem enligt företagsvillkor som gör dem till våra personuppgiftsbiträden. | Det ett verktyg läser medan det arbetar: databasen bakom tjänsten som den är, utom de tabeller som innehåller appintegritetsnycklar och sessionstoken, som är stängda för verktygen. Det omfattar din inslagshistorik, uppgifterna om förfrågningar och bläddringsmarkörerna (avsnitt 3.3), sparade under ditt lyssnar-id. [När kraschrapporter och användningsstatistik finns: verktygen kan också läsa de rapporterna och händelserna (avsnitt 3.5).] Dina önskemål för programledarna sparas inte i databasen. Ett felsökningsunderlag, när ett sådant är påslaget, innehåller dem, och då kan ett verktyg läsa personliga uppgifter som du har skrivit till programledarna. Vi har inte ditt namn eller ditt Apple-konto, så ett verktyg kan inte se dem. Verktygen får inte del av server- och nätverksloggarna, som innehåller IP-adresser. | Att övervaka tjänsten, hitta och åtgärda fel och underhålla den. |
+| AI-verktyg som hjälper oss att driva tjänsten | [Företagen namnges här när de är valda.] Leverantörer av AI-modeller och AI-verktyg för programmering, som är amerikanska koncerner. Vi använder dem enligt företagsvillkor som gör dem till våra personuppgiftsbiträden. | Det ett verktyg läser medan det arbetar: databasen bakom tjänsten som den är, utom de tabeller som innehåller appintegritetsnycklar och sessionstoken, som är stängda för verktygen. Det omfattar din inslagshistorik, uppgifterna om förfrågningar och bläddringsmarkörerna (avsnitt 3.3), sparade under ditt lyssnar-id. Verktygen kan också läsa kraschrapporter (avsnitt 3.5). [När användningsstatistik finns: och användningshändelser.] Dina önskemål för programledarna sparas inte i databasen. Ett felsökningsunderlag, när ett sådant är påslaget, innehåller dem, och då kan ett verktyg läsa personliga uppgifter som du har skrivit till programledarna. Vi har inte ditt namn eller ditt Apple-konto, så ett verktyg kan inte se dem. Verktygen får inte del av server- och nätverksloggarna, som innehåller IP-adresser. | Att övervaka tjänsten, hitta och åtgärda fel och underhålla den. |
 
 Våra avtal med AI-leverantörerna tillåter inte att de tränar sina modeller på dina uppgifter. [Ska bekräftas mot varje undertecknat avtal.]
 
@@ -127,7 +157,7 @@ AI-leverantörerna och leverantörerna av AI-verktyg i avsnitt 5 är amerikanska
 
 ## 7. Hur länge vi sparar uppgifter
 
-Tiderna anges i avsnitt 3.3. När en tid har gått ut raderar vi uppgifterna. Om du ber oss radera dina uppgifter raderar vi din inslagshistorik, uppgifterna om dina förfrågningar och dina identifierare utan att vänta på att tiderna går ut [och, när användningsstatistik finns, dina användningshändelser].
+Tiderna anges i avsnitt 3.3. När en tid har gått ut raderar vi uppgifterna. Om du ber oss radera dina uppgifter raderar vi din inslagshistorik, uppgifterna om dina förfrågningar och dina identifierare utan att vänta på att tiderna går ut [och, när användningsstatistik finns, dina användningshändelser]. Kraschrapporter är undantaget: vi kan inte avgöra vilka som kom från dig, så de finns kvar tills deras 90 dagar har gått (avsnitt 3.5).
 
 AI-leverantörerna sparar det innehåll vi skickar till dem under en begränsad tid enligt sina egna villkor, för att upptäcka missbruk, och raderar det sedan. [Tiderna ska bekräftas mot de undertecknade avtalen.]
 
@@ -141,9 +171,9 @@ Du har rätt att:
 - få vår användning av dina uppgifter begränsad;
 - få de uppgifter du har lämnat i ett portabelt format;
 - invända mot behandling som vi grundar på våra berättigade intressen;
-- när som helst återkalla ett samtycke som du har gett. [När användningsstatistik finns: genom att slå av den i Inställningar.]
+- när som helst återkalla ett samtycke som du har gett. För kraschrapporter: slå av Share Crash Reports i Inställningar. [När användningsstatistik finns: genom att slå av den i Inställningar.]
 
-Eftersom du inte har något konto hos oss kan vi bara hitta dina uppgifter genom lyssnar-id:t i din app. Skriv till <privacy@fedor.nu>. [När användningsstatistik finns: dina användningshändelser är sparade under analysidentifieraren, så skicka oss den identifieraren också. Utan den letar vi efter dem genom att jämföra deras tidpunkter med din inslagshistorik.] [Läggs till när det är byggt: hur du raderar dina uppgifter från appens Inställningar och var appen visar din identifierare.] Vi svarar inom en månad.
+Eftersom du inte har något konto hos oss kan vi bara hitta dina uppgifter genom lyssnar-id:t i din app. Skriv till <privacy@fedor.nu>. [När användningsstatistik finns: dina användningshändelser är sparade under analysidentifieraren, så skicka oss den identifieraren också. Utan den letar vi efter dem genom att jämföra deras tidpunkter med din inslagshistorik.] [Läggs till när det är byggt: hur du raderar dina uppgifter från appens Inställningar och var appen visar din identifierare.] Kraschrapporter innehåller ingen identifierare, så vi kan inte hitta dina (avsnitt 3.5). Vi svarar inom en månad.
 
 Du kan också lämna in ett klagomål till Integritetsskyddsmyndigheten (IMY), <https://www.imy.se>, eller till dataskyddsmyndigheten i det land där du bor.
 

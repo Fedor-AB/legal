@@ -1,6 +1,6 @@
 ---
 title: Crosstalk — Privacy policy
-version: 0.10.1-draft
+version: 0.11.0-draft
 effective_date: TBD
 status: draft, not in force
 ---
@@ -24,7 +24,7 @@ Crosstalk is offered in countries of the European Union and the European Economi
 - Our server passes that information to an AI provider that writes the script, and passes the script to an AI provider that turns it into speech. The app asks for your permission before this happens.
 - We use AI tools from outside companies to help us run and repair the service. While they do that work, they can read what our database holds about your listening, stored under a random identifier. They are not given the logs that contain your IP address.
 - We keep a history of the host segments you heard, tied to a random identifier and not to your name.
-- We do not use advertising or tracking tools, we do not use outside analytics services, and we do not sell data. [When crash reports and usage statistics are available: we collect them ourselves, on our own server (section 3.5). Usage statistics are collected only if you switch them on.]
+- We do not use advertising or tracking tools, we do not use outside analytics services, and we do not sell data. After a crash the app can send us a technical report that carries no identifier of you; whether it does depends on your country and your choice (section 3.5). [When usage statistics are available: we collect them ourselves, on our own server, and only if you switch them on (section 3.5).]
 
 ## 3. What we process and why
 
@@ -62,6 +62,7 @@ We do not receive your Apple Music library, your listening history beyond the tr
 | Sessions and paging markers | The short-lived session token (section 3.2) and the markers the app uses to page through your host history. | Until they expire |
 | Identifiers | The listener identifier and the app integrity key with Apple's proof for it. | The app integrity key: 90 days after it was last used. The listener identifier: until nothing we store refers to it. |
 | Fault-finding capture | The complete text sent to the AI provider and its reply, including your preferences for the hosts. Switched off in normal operation; we switch it on only to investigate a fault. | 30 days |
+| Crash reports | Technical reports about a crash or a freeze, with no identifier of you (section 3.5). | 90 days |
 | Server and network logs | Technical records of requests and errors: time, address requested, result, your IP address, the app and system version your device reports, and the app integrity key reference. [To be confirmed on the production server: logs contain no track details and no text you wrote for the hosts.] | 14 days |
 
 [When the "Build your own show" feature is available: the description of the station and hosts that you write, the result of our automatic check of it, and the accepted world, which is stored on your device.]
@@ -73,27 +74,56 @@ The app stores the following on your device and nowhere else:
 - your settings: your preferences for the hosts, the show and host language you chose, and how your library is sorted. Your preferences for the hosts are sent with each request for a host segment (section 3.1) and are not stored on our server, except inside a fault-finding capture (section 3.3);
 - a list of up to 25 albums and playlists you opened recently, as references without titles;
 - a reference to the app integrity key;
+- your choice about crash reports and, if you tapped "Not now" when the app asked, the dates of those answers;
+- a crash report that is waiting for your answer or waiting to be sent (section 3.5), for 14 days at most;
 - the audio of a host segment while it plays, and, if a segment was interrupted, that audio together with the title, artist and album of the track that follows it, so that the segment can resume.
 
 Deleting the app removes this data. [To be confirmed: except the listener identifier, if it is kept in your iCloud Keychain.] [When usage statistics are available: and except the analytics identifier, see section 3.5.]
 
 ### 3.5 Crash reports and usage statistics
 
-[This section applies when these two features are available. Usage statistics are off until you switch them on. Crash reports have their own switch in Settings. It starts on or off depending on the country of your App Store, and Settings shows which. The app reads that country on your device and does not send it to us.]
+[Usage statistics are not available yet. What this section says about them applies when they are; they stay off until you switch them on.]
 
-**Crash reports.** After a crash or a freeze the app sends our server the technical report that iOS prepared: which part of the app's code was running (the stack trace), the app version and build, the device model and the iOS version. Before sending, the app removes the region, process numbers, memory addresses, the text of error messages and the exact time. We use a report only to find and fix the fault. The report carries no identifier. [To be confirmed on the production server: no log line ties a report to your IP address or to your app integrity key.] We keep a report for 90 days. You can switch crash reports off in Settings.
+**Crash reports.** After a crash or a freeze, iOS prepares a technical report and hands it to the app the next time the app starts. The app copies the following from it and leaves out everything else, including the region, process numbers, memory addresses, the text of error messages and the time of day:
+
+- which part of the code was running: for each step, the component it belongs to and the position inside it (the stack trace);
+- the kind of fault: the numeric codes iOS gives for a crash, the name of the error type if it is one from a fixed list, or how long the app was frozen;
+- the app's identifier and build number, the iOS version and build, the device model and processor type, and whether the app was installed through TestFlight;
+- the day the fault happened, without the time;
+- a random number created for that one report, so that we do not store the same report twice. It is new for every report and does not identify you or your device;
+- which version of the texts about crash reports the app showed, and how reporting came to be on: from the start, by your switch in Settings, or by your answer to the question after a crash.
+
+The report carries no identifier of you: no listener identifier, no device identifier and no account. Our server records the day it received the report, not the time. [To be confirmed on the production server: no log line ties a report to your IP address or to your app integrity key.] We use a report only to find and fix the fault, and we delete it after 90 days. We cannot find, hand over or delete the reports that came from you, because nothing in them points to you.
+
+Whether reports are sent depends on the country of your App Store and on your choice. The app reads that country on your device and does not send it to us; our server gives every copy of the app the same table of starting positions. As of this version:
+
+| Country of your App Store | What happens |
+|---|---|
+| Estonia, Finland, Ireland, the Netherlands, Sweden | Reports are sent unless you switch them off. |
+| Cyprus, Hungary, Luxembourg, Malta, Slovakia | Nothing is sent unless you agree. After a crash or a freeze the app asks you when the report is ready. |
+| Any other country | Nothing is sent unless you switch reports on in Settings. The app does not ask. |
+
+While the app does not know the country or has not received the table, nothing is sent. If the list changes, we update this policy.
+
+**The question after a crash.** In the countries in the second row, the report waits on your device until you answer, for 14 days at most. "Send reports" switches on Share Crash Reports in Settings and sends the waiting report; later reports are sent without asking. "Not now" deletes the waiting report, and nothing is sent. After "Not now" the app may ask again after a later crash: in Cyprus, Hungary, Luxembourg and Malta once more, and not again after a second "Not now"; in Slovakia not earlier than 12 months later. The app asks only while the switch is off, and never if you switched reports off yourself in Settings. The question, the line under the switch and the "About Crash Reports…" page are shown in English.
+
+You can switch crash reports on or off at any time with Share Crash Reports in Settings. Once you switch them off, nothing more is sent.
+
+The AI tools that help us run the service (section 5) can read the reports.
+
+**Crash reports from Apple.** Separately from this, Apple collects crash reports from people who chose in iOS to share analytics with app developers (Settings > Privacy & Security > Analytics & Improvements > Share With App Developers) and shows them to us in a form that does not identify anyone. Apple collects them under its own privacy policy, and our switch does not affect them.
 
 **Usage statistics.** If you switch them on, the app sends our server a short list of events: when playback starts, how long it takes until you hear sound, when a host segment starts and ends, when you skip, when you switch the hosts on or off, and the steps from setup to purchase. Each event carries an analytics identifier, a random number that the app creates when you agree. The analytics identifier is a different number from your listener identifier, but the two can be linked: events such as the start and end of a host segment carry the time, and your host history records when each segment aired. Anyone who reads both, including the AI tools in section 5, can match them by time. We use the events to see how the app performs and to improve it. We also use the analytics identifier to give different listeners different versions of a feature and compare the results.
 
 The analytics identifier is kept in the keychain of your device. It stays there if you delete the app, and after you install the app again it is used only if you agree again. Switching usage statistics off removes it from your device and deletes the events stored under it on our server at once. Your purchase, your host history and your preferences for the hosts are not affected. We keep events for 90 days, and we delete everything stored under an analytics identifier after 90 days without activity.
 
-We run both on our own server. No outside analytics company receives this data. The AI tools that help us run the service (section 5) can read it.
+We keep crash reports and usage statistics on our own server. No outside crash-reporting or analytics company receives them. The AI tools that help us run the service (section 5) can read them.
 
 ## 4. Legal basis
 
 - **Performing our agreement with you** (GDPR Article 6(1)(b)). Checking your purchase, generating host segments, keeping your host history and giving the hosts continuity are what you ask Crosstalk to do under the [terms of use](terms).
-- **Our legitimate interests** (Article 6(1)(f)). We have an interest in keeping the service secure, preventing abuse and keeping the service working. This covers the app integrity check, limits on how often segments can be generated, logs, fault-finding, and the use of AI tools to monitor and repair the service (section 5). [If we count active installs: it also covers counting how many copies of the app were active in the last 30 days. We count the listener identifiers seen in that time and keep only the total.] [When crash reports are available: where the switch starts on, it also covers finding and fixing faults from crash reports (section 3.5).] You can object to this processing; see section 8.
-- **Your consent** (Article 6(1)(a)). [When available:] usage statistics, and crash reports where the switch starts off and you turn it on (section 3.5). You can withdraw it at any time by switching them off in Settings. That does not affect what was done before.
+- **Our legitimate interests** (Article 6(1)(f)). We have an interest in keeping the service secure, preventing abuse and keeping the service working. This covers the app integrity check, limits on how often segments can be generated, logs, fault-finding, and the use of AI tools to monitor and repair the service (section 5). [If we count active installs: it also covers counting how many copies of the app were active in the last 30 days. We count the listener identifiers seen in that time and keep only the total.] Where crash reports are sent unless you switch them off, it also covers finding and fixing faults from those reports (section 3.5). You can object to this processing; see section 8.
+- **Your consent** (Article 6(1)(a)). Crash reports, where they are sent only because you switched them on in Settings or tapped "Send reports" (section 3.5). [When usage statistics are available: usage statistics as well.] You can withdraw it at any time by switching them off in Settings. That does not affect what was done before.
 
 Before the first host segment, the app asks you to allow sharing with AI services. The screen says in short what is shared and why, and this policy gives the details: the data in section 3.1 and the recipients in section 5. Your permission covers the AI providers that write and voice the hosts and the AI tools that help us run the service. Without that permission the hosts cannot work, and none of the data in section 3.1 is sent to our server or to any AI provider. You can change your choice at any time in Settings. Switching the hosts off stops new data from being sent. What is already stored stays for the periods in section 3.3 and can still be read by the AI tools in section 5; you can ask us to delete it (section 8).
 
@@ -108,7 +138,7 @@ We use other companies in four roles. Each of them is our processor: it acts on 
 | Script-writing AI | [Company to be added when the contract is signed. We expect to use one of Anthropic's Claude models, bought either from Anthropic or through a cloud provider.] | The text we assemble for the script: the track and playlist details, the time, your preferences for the hosts, the show's description, and the scripts of your most recent segments. No identifier of you is included. | Writing the hosts' script. |
 | Speech AI | Google [contracting company to be added when the contract is signed] | The finished script, the chosen voices and the language. No identifier of you is included. | Turning the script into speech. |
 | Hosting | [Cloud provider to be added] | Everything our server stores. | Running our server, in [EU region]. |
-| AI tools that help us operate the service | [Companies to be named here when they are chosen.] Providers of AI models and AI coding tools, which are American groups. We use them under business terms that make them our processors. | What a tool reads while it works: the database behind the service as it is, except the tables that hold app integrity keys and session tokens, which are closed to the tools. That includes your host history, request records and paging markers (section 3.3), stored under your listener identifier. [When crash reports and usage statistics are available: the tools can also read those reports and events (section 3.5).] Your preferences for the hosts are not stored in the database. A fault-finding capture, when one is switched on, contains them, so a tool can then read personal details you wrote for the hosts. We do not hold your name or your Apple Account, so a tool cannot see them. The tools are not given the server and network logs, which contain IP addresses. | Monitoring the service, finding and repairing faults, and maintaining it. |
+| AI tools that help us operate the service | [Companies to be named here when they are chosen.] Providers of AI models and AI coding tools, which are American groups. We use them under business terms that make them our processors. | What a tool reads while it works: the database behind the service as it is, except the tables that hold app integrity keys and session tokens, which are closed to the tools. That includes your host history, request records and paging markers (section 3.3), stored under your listener identifier. The tools can also read crash reports (section 3.5). [When usage statistics are available: and usage events.] Your preferences for the hosts are not stored in the database. A fault-finding capture, when one is switched on, contains them, so a tool can then read personal details you wrote for the hosts. We do not hold your name or your Apple Account, so a tool cannot see them. The tools are not given the server and network logs, which contain IP addresses. | Monitoring the service, finding and repairing faults, and maintaining it. |
 
 Our contracts with the AI providers do not allow them to train their models on your data. [To be confirmed against each signed contract.]
 
@@ -126,7 +156,7 @@ The AI providers and the providers of AI tools in section 5 are American groups.
 
 ## 7. How long we keep data
 
-The periods are listed in section 3.3. When a period ends we delete the data. If you ask us to delete your data, we delete your host history, your request records and your identifiers without waiting for those periods to end [and, when usage statistics are available, your usage events].
+The periods are listed in section 3.3. When a period ends we delete the data. If you ask us to delete your data, we delete your host history, your request records and your identifiers without waiting for those periods to end [and, when usage statistics are available, your usage events]. Crash reports are the exception: we cannot tell which ones came from you, so they stay until their 90 days end (section 3.5).
 
 The AI providers keep the content we send them for a limited time under their own terms, to detect misuse, and then delete it. [Periods to be confirmed against the signed contracts.]
 
@@ -140,9 +170,9 @@ You have the right to:
 - have our use of your data restricted;
 - receive the data you provided in a portable format;
 - object to processing that we base on our legitimate interests;
-- withdraw a consent you gave, at any time. [When usage statistics are available: by switching them off in Settings.]
+- withdraw a consent you gave, at any time. For crash reports: switch off Share Crash Reports in Settings. [When usage statistics are available: by switching them off in Settings.]
 
-Because you have no account with us, we can only find your data through the listener identifier in your app. Write to <privacy@fedor.nu>. [When usage statistics are available: your usage events are stored under the analytics identifier, so send us that identifier as well. Without it we look for them by matching their times with your host history.] [To be added when built: how to delete your data from the app's Settings, and where the app shows your identifier.] We answer within one month.
+Because you have no account with us, we can only find your data through the listener identifier in your app. Write to <privacy@fedor.nu>. [When usage statistics are available: your usage events are stored under the analytics identifier, so send us that identifier as well. Without it we look for them by matching their times with your host history.] [To be added when built: how to delete your data from the app's Settings, and where the app shows your identifier.] Crash reports carry no identifier, so we cannot find yours (section 3.5). We answer within one month.
 
 You can also complain to the Swedish Authority for Privacy Protection (Integritetsskyddsmyndigheten, IMY), <https://www.imy.se>, or to the data protection authority in the country where you live.
 
