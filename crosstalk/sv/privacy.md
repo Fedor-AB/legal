@@ -76,7 +76,7 @@ Appen sparar följande på din enhet och ingen annanstans:
 - en lista över upp till 25 album och spellistor som du nyligen har öppnat, som hänvisningar utan titlar;
 - en hänvisning till appintegritetsnyckeln;
 - ditt val om kraschrapporter och, om du har tryckt på ”Not now” när appen frågade, datumen för de svaren;
-- en kraschrapport som väntar på ditt svar eller på att skickas (avsnitt 3.5), i högst 14 dagar;
+- en kraschrapport som väntar på ditt svar eller på att skickas (avsnitt 3.5); appen tar bort den när den är äldre än 14 dagar;
 - ljudet till ett inslag medan det spelas och, om ett inslag avbröts, det ljudet tillsammans med titel, artist och album för låten som följer efter det, så att inslaget kan fortsätta.
 
 När du raderar appen tas de här uppgifterna bort. [Ska bekräftas: utom lyssnar-id:t, om det sparas i din iCloud-nyckelring.] [När användningsstatistik finns: och utom analysidentifieraren, se avsnitt 3.5.]
@@ -94,7 +94,7 @@ När du raderar appen tas de här uppgifterna bort. [Ska bekräftas: utom lyssna
 - ett slumpmässigt nummer som skapas för just den rapporten, så att vi inte sparar samma rapport två gånger. Det är nytt för varje rapport och identifierar varken dig eller din enhet;
 - vilken version av texterna om kraschrapporter som appen visade, och hur rapporteringen kom att vara påslagen: från början, genom din omkopplare i Inställningar eller genom ditt svar på frågan efter en krasch.
 
-Rapporten innehåller ingen identifierare för dig: inget lyssnar-id, ingen enhetsidentifierare och inget konto. Vår server registrerar vilken dag den tog emot rapporten, inte klockslaget. [Ska bekräftas på produktionsservern: ingen loggrad kopplar en rapport till din IP-adress eller till din appintegritetsnyckel.] Vi använder en rapport bara för att hitta och åtgärda felet, och vi raderar den efter 90 dagar. Vi kan inte hitta, lämna ut eller radera de rapporter som kom från dig, eftersom inget i dem pekar på dig.
+Rapporten innehåller ingen identifierare för dig: inget lyssnar-id, ingen enhetsidentifierare och inget konto. Tillsammans med rapporten sparar vår server vilken dag den kom in, inte klockslaget. [Ska bekräftas på produktionsservern: ingen loggrad kopplar en rapport till din IP-adress eller till din appintegritetsnyckel.] Vi använder en rapport bara för att hitta och åtgärda felet, och vi raderar den efter 90 dagar. Vi kan inte hitta, lämna ut eller radera de rapporter som kom från dig, eftersom inget i dem pekar på dig.
 
 Om rapporter skickas beror på landet för din App Store och på ditt val. Appen läser det landet på din enhet och skickar det inte till oss; vår server ger alla kopior av appen samma tabell över utgångslägen. I den här versionen gäller:
 
@@ -106,7 +106,7 @@ Om rapporter skickas beror på landet för din App Store och på ditt val. Appen
 
 Så länge appen inte känner till landet eller inte har fått tabellen skickas ingenting. Om listan ändras uppdaterar vi den här policyn.
 
-**Frågan efter en krasch.** I länderna på den andra raden väntar rapporten på din enhet tills du svarar, dock högst 14 dagar. ”Send reports” slår på Share Crash Reports i Inställningar och skickar den rapport som väntar; senare rapporter skickas utan att appen frågar. ”Not now” raderar den rapport som väntar, och ingenting skickas. Efter ”Not now” kan appen fråga igen efter en senare krasch: på Cypern, i Luxemburg, på Malta och i Ungern en gång till, och inte fler gånger efter ett andra ”Not now”; i Slovakien tidigast 12 månader senare. Appen frågar bara medan omkopplaren är avstängd, och aldrig om du själv har slagit av rapporter i Inställningar. Frågan, raden under omkopplaren och sidan ”About Crash Reports…” visas på engelska.
+**Frågan efter en krasch.** I länderna på den andra raden väntar rapporten på din enhet tills du svarar; appen tar bort en väntande rapport när den är äldre än 14 dagar. ”Send reports” slår på Share Crash Reports i Inställningar och skickar den rapport som väntar; senare rapporter skickas utan att appen frågar. ”Not now” raderar den rapport som väntar, och ingenting skickas. Efter ”Not now” kan appen fråga igen efter en senare krasch: på Cypern, i Luxemburg, på Malta och i Ungern en gång till, och inte fler gånger efter ett andra ”Not now”; i Slovakien tidigast 12 månader senare. Appen frågar bara medan omkopplaren är avstängd, och aldrig om du själv har slagit av rapporter i Inställningar. Frågan, raden under omkopplaren och sidan ”About Crash Reports…” visas på engelska.
 
 Du kan när som helst slå på eller av kraschrapporter med Share Crash Reports i Inställningar. När du har slagit av dem skickas inget mer.
 

@@ -75,7 +75,7 @@ The app stores the following on your device and nowhere else:
 - a list of up to 25 albums and playlists you opened recently, as references without titles;
 - a reference to the app integrity key;
 - your choice about crash reports and, if you tapped "Not now" when the app asked, the dates of those answers;
-- a crash report that is waiting for your answer or waiting to be sent (section 3.5), for 14 days at most;
+- a crash report that is waiting for your answer or waiting to be sent (section 3.5); the app drops it once it is older than 14 days;
 - the audio of a host segment while it plays, and, if a segment was interrupted, that audio together with the title, artist and album of the track that follows it, so that the segment can resume.
 
 Deleting the app removes this data. [To be confirmed: except the listener identifier, if it is kept in your iCloud Keychain.] [When usage statistics are available: and except the analytics identifier, see section 3.5.]
@@ -93,7 +93,7 @@ Deleting the app removes this data. [To be confirmed: except the listener identi
 - a random number created for that one report, so that we do not store the same report twice. It is new for every report and does not identify you or your device;
 - which version of the texts about crash reports the app showed, and how reporting came to be on: from the start, by your switch in Settings, or by your answer to the question after a crash.
 
-The report carries no identifier of you: no listener identifier, no device identifier and no account. Our server records the day it received the report, not the time. [To be confirmed on the production server: no log line ties a report to your IP address or to your app integrity key.] We use a report only to find and fix the fault, and we delete it after 90 days. We cannot find, hand over or delete the reports that came from you, because nothing in them points to you.
+The report carries no identifier of you: no listener identifier, no device identifier and no account. With the report, our server stores the day it arrived, not the time. [To be confirmed on the production server: no log line ties a report to your IP address or to your app integrity key.] We use a report only to find and fix the fault, and we delete it after 90 days. We cannot find, hand over or delete the reports that came from you, because nothing in them points to you.
 
 Whether reports are sent depends on the country of your App Store and on your choice. The app reads that country on your device and does not send it to us; our server gives every copy of the app the same table of starting positions. As of this version:
 
@@ -105,7 +105,7 @@ Whether reports are sent depends on the country of your App Store and on your ch
 
 While the app does not know the country or has not received the table, nothing is sent. If the list changes, we update this policy.
 
-**The question after a crash.** In the countries in the second row, the report waits on your device until you answer, for 14 days at most. "Send reports" switches on Share Crash Reports in Settings and sends the waiting report; later reports are sent without asking. "Not now" deletes the waiting report, and nothing is sent. After "Not now" the app may ask again after a later crash: in Cyprus, Hungary, Luxembourg and Malta once more, and not again after a second "Not now"; in Slovakia not earlier than 12 months later. The app asks only while the switch is off, and never if you switched reports off yourself in Settings. The question, the line under the switch and the "About Crash Reports…" page are shown in English.
+**The question after a crash.** In the countries in the second row, the report waits on your device until you answer; the app drops a waiting report once it is older than 14 days. "Send reports" switches on Share Crash Reports in Settings and sends the waiting report; later reports are sent without asking. "Not now" deletes the waiting report, and nothing is sent. After "Not now" the app may ask again after a later crash: in Cyprus, Hungary, Luxembourg and Malta once more, and not again after a second "Not now"; in Slovakia not earlier than 12 months later. The app asks only while the switch is off, and never if you switched reports off yourself in Settings. The question, the line under the switch and the "About Crash Reports…" page are shown in English.
 
 You can switch crash reports on or off at any time with Share Crash Reports in Settings. Once you switch them off, nothing more is sent.
 
