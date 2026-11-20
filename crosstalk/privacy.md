@@ -1,6 +1,6 @@
 ---
 title: Crosstalk — Privacy policy
-version: 0.11.0-draft
+version: 0.11.1-draft
 effective_date: TBD
 status: draft, not in force
 ---
@@ -138,7 +138,7 @@ We use other companies in four roles. Each of them is our processor: it acts on 
 | Script-writing AI | [Company to be added when the contract is signed. We expect to use one of Anthropic's Claude models, bought either from Anthropic or through a cloud provider.] | The text we assemble for the script: the track and playlist details, the time, your preferences for the hosts, the show's description, and the scripts of your most recent segments. No identifier of you is included. | Writing the hosts' script. |
 | Speech AI | Google [contracting company to be added when the contract is signed] | The finished script, the chosen voices and the language. No identifier of you is included. | Turning the script into speech. |
 | Hosting | [Cloud provider to be added] | Everything our server stores. | Running our server, in [EU region]. |
-| AI tools that help us operate the service | [Companies to be named here when they are chosen.] Providers of AI models and AI coding tools, which are American groups. We use them under business terms that make them our processors. | What a tool reads while it works: the database behind the service as it is, except the tables that hold app integrity keys and session tokens, which are closed to the tools. That includes your host history, request records and paging markers (section 3.3), stored under your listener identifier. The tools can also read crash reports (section 3.5). [When usage statistics are available: and usage events.] Your preferences for the hosts are not stored in the database. A fault-finding capture, when one is switched on, contains them, so a tool can then read personal details you wrote for the hosts. We do not hold your name or your Apple Account, so a tool cannot see them. The tools are not given the server and network logs, which contain IP addresses. | Monitoring the service, finding and repairing faults, and maintaining it. |
+| AI tools that help us operate the service | [Companies to be named here when they are chosen.] Providers of AI models and AI tools, which are American groups. We use them under business terms that make them our processors. | What a tool reads while it works: the database behind the service as it is, except the tables that hold app integrity keys and session tokens, which are closed to the tools. That includes your host history, request records and paging markers (section 3.3), stored under your listener identifier. The tools can also read crash reports (section 3.5). [When usage statistics are available: and usage events.] Your preferences for the hosts are not stored in the database. A fault-finding capture, when one is switched on, contains them, so a tool can then read personal details you wrote for the hosts. We do not hold your name or your Apple Account, so a tool cannot see them. The tools are not given the server and network logs, which contain IP addresses. | Monitoring the service, finding and repairing faults, and maintaining it. |
 
 Our contracts with the AI providers do not allow them to train their models on your data. [To be confirmed against each signed contract.]
 
