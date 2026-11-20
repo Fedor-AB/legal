@@ -3,4 +3,8 @@ title: Crosstalk — legal
 ---
 # Crosstalk
 
-Privacy policy and terms of use will be published here.
+Crosstalk is an iOS app by Fedor AB. The documents below are drafts under review and are not yet in force.
+
+- [Privacy policy](privacy) ([svenska](sv/privacy))
+- [Terms of use](terms)
+- [AI disclosure](ai-disclosure)
